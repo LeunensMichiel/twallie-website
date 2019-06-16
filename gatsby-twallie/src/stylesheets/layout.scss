@@ -1,0 +1,21 @@
+@import './normalize.css';
+
+//-----------------------------
+//--------- COLORS  -----------
+//-----------------------------
+
+$background: #161919;
+$background-accent: #34525E;
+$primary-accent: #FAA11E;
+$secondary-accent: #F0CEAE;
+$foreground: #FFFDFC;
+
+//-----------------------------
+//--------- Main Layout  -----------
+//-----------------------------
+
+body {
+    color: $foreground;
+    background: $background;
+    font-family: 'Oswald', 'sans-serif';
+}
