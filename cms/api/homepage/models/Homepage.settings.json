@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "homepages",
+  "info": {
+    "name": "homepage",
+    "description": "Velden voor uw hoofdpagina"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "twallieDescription": {
+      "maxLength": 200,
+      "default": "'s werelds beste heumeu",
+      "required": true,
+      "unique": true,
+      "minLength": 10,
+      "type": "string"
+    },
+    "homeBackground": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}
