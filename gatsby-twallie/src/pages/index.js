@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Img from 'gatsby-image'
+import Button from '../components/button'
 
 import Icon from '../images/twallie-logo.svg'
 
@@ -47,6 +47,15 @@ const Background = styled.div`
     );
   }
 `
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const IndexPage = ({ data }) => (
   <>
     <Background
@@ -63,6 +72,11 @@ const IndexPage = ({ data }) => (
         <TwallieDescription>
           {data.strapiPage.twallieDescription}
         </TwallieDescription>
+        <Flex>
+          <Button text="Boek mij"/>
+          <Button text="Press-kit" linkTo="https://www.google.be/" external/>
+          <Button text="Wie ben ik?" linkTo="/aboutMe"/>
+        </Flex>
       </LandingContainer>
     </Layout>
   </>
@@ -79,7 +93,7 @@ export const pageQuery = graphql`
       pageBackground {
         id
         childImageSharp {
-          fluid(quality: 70, maxWidth: 2048, fit: COVER) {
+          fluid(quality: 77, maxWidth: 2048, fit: COVER) {
             src
           }
         }
