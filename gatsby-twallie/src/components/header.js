@@ -1,19 +1,40 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import colors from './colors'
+
 const Navigation = styled.nav`
-`;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-top: 40px;
+`
 
-const Header = ({ active }) => <div>lol</div>
+const StyledLink = styled(Link)`
+  color: ${colors.foreground};
+  font-size: 24px;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  margin-right: ${props => props.last === "true"? '0' : '40px'};
+`
 
-Header.propTypes = {
-  active: PropTypes.bool,
-}
-
-Header.defaultProps = {
-  active: true,
-}
+const Header = () => (
+  <Navigation>
+    <StyledLink to="/" activeStyle={{ 'borderColor': colors.secondaryaccent }}>
+      BOEKING
+    </StyledLink>
+    <StyledLink
+      last="true"
+      to="/socials"
+      activeStyle={{ 'borderColor': colors.secondaryaccent }}
+    >
+      SOCIALS
+    </StyledLink>
+  </Navigation>
+)
 
 export default Header

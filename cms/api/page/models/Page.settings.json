@@ -2,28 +2,35 @@
   "connection": "default",
   "collectionName": "homepages",
   "info": {
-    "name": "homepage",
-    "description": "Velden voor uw hoofdpagina"
+    "name": "page",
+    "description": "Velden voor uw pagina's"
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
     "twallieDescription": {
       "maxLength": 200,
       "default": "'s werelds beste heumeu",
-      "required": true,
       "unique": true,
       "minLength": 10,
       "type": "string"
     },
-    "homeBackground": {
+    "pageBackground": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
       "required": true
+    },
+    "type": {
+      "unique": true,
+      "required": true,
+      "type": "string"
     }
   }
 }
