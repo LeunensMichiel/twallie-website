@@ -23,3 +23,19 @@ body {
     justify-content: center;
     align-items: flex-start;
 }
+
+.footer-logo {
+    color: $foreground;
+    font-size: 24px;
+    transition: ease .3s;
+
+    &:hover,
+    &:focus {
+        color: $secondary-accent;
+        transition: ease .2s;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

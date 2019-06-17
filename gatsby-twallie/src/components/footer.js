@@ -1,12 +1,23 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-
+import {
+  FaMugHot,
+  FaFacebookSquare,
+  FaInstagram,
+  FaSoundcloud,
+  FaSpotify,
+} from 'react-icons/fa'
+import { IconContext } from 'react-icons'
 import colors from './colors'
 
 const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 18px;
+  align-items: center;
+  justify-items: center;
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -14,10 +25,48 @@ const StyledFooter = styled.footer`
   margin-left: -50vw;
   margin-right: -50vw;
 `
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 160px;
+
+  &:hover {
+  }
+`
+const date = new Date().getFullYear()
 
 const Footer = () => (
   <StyledFooter>
-    <p>Twallie 2019. Made with coffe by <a>Leunes Media</a></p>
+    <Flex>
+      <IconContext.Provider value={{ className: 'footer-logo' }}>
+        <a href="https://www.facebook.com/deejaytwallie/" target="_blank">
+          <FaFacebookSquare />
+        </a>
+        <a href="https://www.instagram.com/deejaytwallie/" target="_blank">
+          <FaInstagram />
+        </a>
+        <a href="https://soundcloud.com/deejaytwallie" target="_blank">
+          <FaSoundcloud />
+        </a>
+        <a
+          href="https://open.spotify.com/playlist/5tBYrn9DYwU3kZdMvFncSN?si=UEu64_MWTtWloGEw7uGCxg"
+          target="_blank"
+        >
+          <FaSpotify />
+        </a>
+      </IconContext.Provider>{' '}
+    </Flex>
+    <div>
+      <small>
+        &copy; Twallie {date}. Made with{' '}
+        <IconContext.Provider value={{ color: colors.secondaryaccent }}>
+          <FaMugHot />
+        </IconContext.Provider>{' '}
+        by <a>Leunes Media</a>
+      </small>
+    </div>
   </StyledFooter>
 )
 
