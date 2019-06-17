@@ -7,4 +7,6 @@
 
 [build]
   base    = "gatsby-twallie"
+  publish = "public/"
+  command = "gatsby build"
 
