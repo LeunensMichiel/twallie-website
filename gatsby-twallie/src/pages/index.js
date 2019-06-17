@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Button from '../components/button'
+import ContactModal from '../components/home/contactMe'
 
 import Icon from '../images/twallie-logo.svg'
 
@@ -54,31 +55,33 @@ const Flex = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 const IndexPage = ({ data }) => (
   <>
-    <Background
-      imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
-    />
-    <Layout>
-      <SEO
-        title="Boekings"
-        description="Boek Deejay Twallie // Home Pagina"
-        lang="nl"
+    <div id="mainContent">
+      <Background
+        imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
       />
-      <LandingContainer>
-        <Icon />
-        <TwallieDescription>
-          {data.strapiPage.twallieDescription}
-        </TwallieDescription>
-        <Flex>
-          <Button text="Boek mij"/>
-          <Button text="Press-kit" linkTo="https://www.google.be/" external/>
-          <Button text="Wie ben ik?" linkTo="/aboutMe"/>
-        </Flex>
-      </LandingContainer>
-    </Layout>
+      <Layout>
+        <SEO
+          title="Boekings"
+          description="Boek Deejay Twallie // Home Pagina"
+          lang="nl"
+        />
+        <LandingContainer>
+          <Icon />
+          <TwallieDescription>
+            {data.strapiPage.twallieDescription}
+          </TwallieDescription>
+          <Flex>
+            <ContactModal />
+            <Button text="Press-kit" linkTo="https://www.google.be/" external />
+            <Button text="Wie ben ik?" linkTo="/aboutMe" />
+          </Flex>
+        </LandingContainer>
+      </Layout>
+    </div>
   </>
 )
 

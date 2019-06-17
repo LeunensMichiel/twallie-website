@@ -19,6 +19,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-items: center;
   position: absolute;
+  z-index: 5;
   bottom: 40px;
   left: 50%;
   right: 50%;
@@ -41,18 +42,31 @@ const Footer = () => (
   <StyledFooter>
     <Flex>
       <IconContext.Provider value={{ className: 'footer-logo' }}>
-        <a href="https://www.facebook.com/deejaytwallie/" target="_blank">
+        <a
+          href="https://www.facebook.com/deejaytwallie/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaFacebookSquare />
         </a>
-        <a href="https://www.instagram.com/deejaytwallie/" target="_blank">
+        <a
+          href="https://www.instagram.com/deejaytwallie/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaInstagram />
         </a>
-        <a href="https://soundcloud.com/deejaytwallie" target="_blank">
+        <a
+          href="https://soundcloud.com/deejaytwallie"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaSoundcloud />
         </a>
         <a
           href="https://open.spotify.com/playlist/5tBYrn9DYwU3kZdMvFncSN?si=UEu64_MWTtWloGEw7uGCxg"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <FaSpotify />
         </a>

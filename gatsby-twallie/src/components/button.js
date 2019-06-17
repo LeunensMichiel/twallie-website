@@ -44,6 +44,7 @@ const StyledLink = styled(Link)`
 
   &:hover,
   &:active {
+    cursor: pointer;
     border-color: ${colors.secondaryaccent};
     transition: all 0.3s;
   }
@@ -98,6 +99,7 @@ const StyledButton = styled.a`
 
   &:hover,
   &:active {
+    cursor: pointer;
     border-color: ${colors.secondaryaccent};
     transition: all 0.3s;
   }
@@ -113,14 +115,21 @@ const StyledButton = styled.a`
   }
 `
 
-const Button = ({ text, linkTo, external }) => (
+const Button = ({ text, linkTo, external, onClick }) => (
   <>
     {external ? (
-      <StyledButton href={linkTo} target="_blank">
+      <StyledButton
+        href={linkTo}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+      >
         {text}
       </StyledButton>
     ) : (
-      <StyledLink to={linkTo}>{text}</StyledLink>
+      <StyledLink to={linkTo} onClick={onClick}>
+        {text}
+      </StyledLink>
     )}
   </>
 )
@@ -129,6 +138,7 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   linkTo: PropTypes.string,
   external: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 Button.defaultProps = {
