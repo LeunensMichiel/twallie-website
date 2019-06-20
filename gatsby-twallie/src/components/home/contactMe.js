@@ -1,37 +1,43 @@
 import React from 'react'
-import Modal from 'react-responsive-modal'
+import styled from 'styled-components'
+
 import Button from '../button'
 
-export default class App extends React.Component {
-  state = {
-    open: false,
-  }
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
 
-  onOpenModal = () => {
-    this.setState({ open: true })
-  }
+const FlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+`
 
-  onCloseModal = () => {
-    this.setState({ open: false })
-  }
+const Divider = styled.div`
+  margin: 0 93px;
+`
 
-  render() {
-    const { open } = this.state
-    return (
-      <div>
-        <Button onClick={this.onOpenModal} text="Boek mij" external />
-        <Modal
-          open={open}
-          onClose={this.onCloseModal}
-          center
-          classNames={{
-            overlay: 'overlay',
-            modal: 'modal',
-          }}
-        >
-          <h2>Simple centered modal</h2>
-        </Modal>
-      </div>
-    )
-  }
+const ContactMe = () => {
+  return (
+    <Flex>
+      <FlexCol>
+        <h2>Boeken?</h2>
+        <input name="test" />
+        <input name="test" />
+        <input name="test" />
+        <input name="test" />
+      </FlexCol>
+      <Divider />
+      <FlexCol>
+        <input name="test" />
+        <Button text="Verstuur" external />
+      </FlexCol>
+    </Flex>
+  )
 }
+
+export default ContactMe

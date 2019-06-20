@@ -42,24 +42,48 @@ body {
 }
 
 .modal {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    z-index: 10;
-    background-color: rgba(22, 25, 25, .5);
+    background-color: rgba(22, 25, 25, .7);
+    width: 1004px;
+    height: 544px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    button {
+        outline: none;
+    }
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(22, 25, 25, .9);
+    background-color: transparent;
+}
 
-    ~& {
-        filter: brightness(0.4) blur(50px);
+.modalCloseBtn {
+    fill: $foreground;
+    transition: ease .2s;
+    outline: none;
+
+    &:hover {
+        fill: $secondary-accent;
+        transition: ease .2s;
+        cursor: pointer;
+    }
+}
+
+.blurwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    filter: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: 5;
+    transition: ease .05s;
+
+    &.open {
+        filter: blur(50px);
     }
 }

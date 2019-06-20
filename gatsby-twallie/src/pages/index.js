@@ -5,7 +5,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Button from '../components/button'
-import ContactModal from '../components/home/contactMe'
+import TwallieModal from '../components/home/TwallieModal'
+import ContactMe from '../components/home/ContactMe'
 
 import Icon from '../images/twallie-logo.svg'
 
@@ -59,7 +60,7 @@ const Flex = styled.div`
 
 const IndexPage = ({ data }) => (
   <>
-    <div id="mainContent">
+    <div className="blurwrapper">
       <Background
         imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
       />
@@ -75,7 +76,7 @@ const IndexPage = ({ data }) => (
             {data.strapiPage.twallieDescription}
           </TwallieDescription>
           <Flex>
-            <ContactModal />
+            <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
             <Button text="Press-kit" linkTo="https://www.google.be/" external />
             <Button text="Wie ben ik?" linkTo="/aboutMe" />
           </Flex>

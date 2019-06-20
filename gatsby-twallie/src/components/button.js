@@ -78,6 +78,7 @@ const StyledButton = styled.a`
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
+  z-index: 4;
 
   &:before {
     position: relative;
