@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../button'
+import colors from '../colors'
 
 const Flex = styled.div`
   display: flex;
@@ -17,8 +18,11 @@ const FlexCol = styled.div`
   align-items: flex-start;
 `
 
-const Divider = styled.div`
+const Divider = styled.span`
   margin: 0 93px;
+  display: inline-block;
+  width: 1px;
+  background-color: ${colors.foreground};
 `
 
 const ContactMe = () => {
@@ -31,7 +35,7 @@ const ContactMe = () => {
         <input name="test" />
         <input name="test" />
       </FlexCol>
-      <Divider />
+      {/* <Divider /> */}
       <FlexCol>
         <input name="test" />
         <Button text="Verstuur" external />

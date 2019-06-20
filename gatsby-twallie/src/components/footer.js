@@ -36,6 +36,17 @@ const Flex = styled.div`
   &:hover {
   }
 `
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: ${colors.foreground};
+  transition: ease 0.3s;
+
+  &:hover {
+    color: ${colors.secondaryaccent};
+  }
+`
+
 const date = new Date().getFullYear()
 
 const Footer = () => (
@@ -78,7 +89,8 @@ const Footer = () => (
         <IconContext.Provider value={{ color: colors.secondaryaccent }}>
           <FaMugHot />
         </IconContext.Provider>{' '}
-        by <a>Leunes Media</a>
+        by{' '}
+        <StyledLink href="http://www.leunesmedia.be/">Leunes Media</StyledLink>
       </small>
     </div>
   </StyledFooter>
