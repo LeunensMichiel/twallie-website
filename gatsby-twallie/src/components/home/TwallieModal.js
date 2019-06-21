@@ -34,9 +34,8 @@ class TwallieModal extends React.Component {
             modal: 'modal',
             closeIcon: 'modalCloseBtn',
           }}
-        >
-          {content}
-        </Modal>
+          children={content}
+        ></Modal>
       </>
     )
   }
@@ -44,7 +43,7 @@ class TwallieModal extends React.Component {
 
 TwallieModal.propTypes = {
   buttonText: PropTypes.string,
-  content: PropTypes.element,
+  content: PropTypes.node,
 }
 
 export default TwallieModal
