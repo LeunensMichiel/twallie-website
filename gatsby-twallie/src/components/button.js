@@ -79,6 +79,7 @@ const StyledButton = styled.a`
   box-sizing: border-box;
   position: relative;
   z-index: 4;
+  margin-top: ${props => (props.form === 1 ? '25px' : '0')};
 
   &:before {
     position: relative;
@@ -116,7 +117,7 @@ const StyledButton = styled.a`
   }
 `
 
-const Button = ({ text, linkTo, external, onClick }) => (
+const Button = ({ text, linkTo, external, onClick, form }) => (
   <>
     {external ? (
       <StyledButton
@@ -124,6 +125,7 @@ const Button = ({ text, linkTo, external, onClick }) => (
         target="_blank"
         rel="noopener noreferrer"
         onClick={onClick}
+        form={form ? 1 : 0}
       >
         {text}
       </StyledButton>
@@ -140,6 +142,7 @@ Button.propTypes = {
   linkTo: PropTypes.string,
   external: PropTypes.bool,
   onClick: PropTypes.func,
+  form: PropTypes.bool,
 }
 
 Button.defaultProps = {
