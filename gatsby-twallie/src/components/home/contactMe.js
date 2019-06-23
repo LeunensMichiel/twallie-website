@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import DatePicker from 'react-datepicker'
+import nl from 'date-fns/locale/nl'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import Button from '../button'
@@ -64,7 +65,7 @@ const FormInput = styled.div`
 
   textarea {
     resize: none;
-    height: 201px;
+    height: 195px;
 
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
@@ -85,6 +86,7 @@ const FormInput = styled.div`
     border: none;
     border-radius: 0;
     border-bottom: 1px solid ${colors.foreground + 'A8'};
+    box-shadow: none;
     &:focus {
       outline: none;
     }
@@ -98,14 +100,15 @@ const FormInput = styled.div`
     }
   }
 
-  input[type='password'] {
-    letter-spacing: 0.3em;
+  .react-datepicker-wrapper {
+    &:focus-within ~ .bar:before {
+      width: 350px;
+    }
+    &:focus-within ~ .form-icons {
+      color: ${colors.primaryaccent};
+      transition: ease 0.3s;
+    }
   }
-
-  input[type='date']::-webkit-calendar-picker-indicator {
-    background: transparent;
-  }
-
   .form-icons {
     color: ${colors.foreground + 'A8'};
     position: absolute;
@@ -138,7 +141,7 @@ class ContactMe extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      startDate: new Date(),
+      startDate: null,
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -173,12 +176,17 @@ class ContactMe extends React.Component {
             </FormInput>
             <FormInput>
               <DatePicker
+                className="datepicker"
+                locale={nl}
                 selected={this.state.startDate}
                 onChange={this.handleChange}
                 showTimeSelect
+                timeIntervals={15}
                 timeFormat="HH:mm"
                 dateFormat="d.M.yyyy HH:mm"
-                timeCaption="time"
+                timeCaption="Uur"
+                minDate={new Date()}
+                placeholderText="Datum & Tijd Event"
               />
               <span className="highlight"></span>
               <span className="bar"></span>
