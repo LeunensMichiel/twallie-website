@@ -19,18 +19,24 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   padding: 4px 0;
   border-bottom: 2px solid transparent;
-  margin-right: ${props => props.last === "true"? '0' : '40px'};
+  margin-right: ${props => (props.last === 'true' ? '0' : '40px')};
+  transition: all ease 0.3s;
+
+  &:hover {
+    color: ${colors.secondaryaccent};
+    transition: all ease 0.1s;
+  }
 `
 
 const Header = () => (
   <Navigation>
-    <StyledLink to="/" activeStyle={{ 'borderColor': colors.secondaryaccent }}>
+    <StyledLink to="/" activeStyle={{ borderColor: colors.secondaryaccent }}>
       BOEKING
     </StyledLink>
     <StyledLink
       last="true"
       to="/socials"
-      activeStyle={{ 'borderColor': colors.secondaryaccent }}
+      activeStyle={{ borderColor: colors.secondaryaccent }}
     >
       SOCIALS
     </StyledLink>

@@ -39,13 +39,6 @@ const FlexRight = styled.div`
   margin-bottom: 22px;
 `
 
-const Divider = styled.span`
-  margin: 0 93px;
-  display: inline-block;
-  width: 1px;
-  background-color: ${colors.foreground + 'A8'};
-`
-
 const Title = styled.h1`
   font-size: 72px;
   line-height: 100px;
@@ -80,7 +73,7 @@ const FormInput = styled.div`
     background: none;
     color: ${colors.foreground};
     font-size: 16px;
-    padding: 15px 45px 15px 0;
+    padding: 15px 30px 15px 0;
     display: block;
     width: 350px;
     border: none;
@@ -204,7 +197,6 @@ class ContactMe extends React.Component {
             </FormInput>
             <Note>Velden met een * zijn verplicht</Note>
           </FlexCol>
-          {/* <Divider /> */}
           <FlexCol>
             <FlexRight>
               <FormInput>

@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 import {
@@ -32,9 +31,6 @@ const Flex = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 160px;
-
-  &:hover {
-  }
 `
 
 const StyledLink = styled.a`
@@ -90,7 +86,9 @@ const Footer = () => (
           <FaMugHot />
         </IconContext.Provider>{' '}
         by{' '}
-        <StyledLink href="http://www.leunesmedia.be/">Leunes Media</StyledLink>
+        <StyledLink href="http://www.leunesmedia.be/" target="_blank">
+          Leunes Media
+        </StyledLink>
       </small>
     </div>
   </StyledFooter>

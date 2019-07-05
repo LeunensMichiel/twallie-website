@@ -16,7 +16,7 @@
   "attributes": {
     "twallieDescription": {
       "maxLength": 200,
-      "default": "'s werelds beste heumeu",
+      "default": "",
       "unique": true,
       "minLength": 10,
       "type": "string"
