@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import _ from 'lodash'
 import { FaSoundcloud, FaSpotify, FaInstagram } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import InstaBlock from '../components/socials/InstaBlock'
@@ -58,19 +59,25 @@ const SocialItems = styled.div`
   align-content: flex-start;
   padding-right: 16px;
   border-right: 2px solid ${colors.backgroundaccent};
+`
+const SocialBlock = styled.div`
+  width: 834px;
+`
 
+const StyledLink = styled.a`
   .insta {
     font-size: 69px;
-    color: ${colors.backgroundaccent};
     transition: 0.3s ease;
+    color: ${props => (props.active ? '#e4405f' : colors.backgroundaccent)};
+
     &:hover {
       cursor: pointer;
       color: #e4405f;
     }
   }
   .spotify {
+    color: ${props => (props.active ? '#1db954' : colors.backgroundaccent)};
     font-size: 69px;
-    color: ${colors.backgroundaccent};
     transition: 0.3s ease;
     &:hover {
       cursor: pointer;
@@ -78,17 +85,14 @@ const SocialItems = styled.div`
     }
   }
   .sc {
+    color: ${props => (props.active ? '#ff5501' : colors.backgroundaccent)};
     font-size: 69px;
-    color: ${colors.backgroundaccent};
     transition: 0.3s ease;
     &:hover {
       cursor: pointer;
       color: #ff5501;
     }
   }
-`
-const SocialBlock = styled.div`
-  width: 100%;
 `
 
 export default class SocialsPage extends React.Component {
@@ -100,6 +104,29 @@ export default class SocialsPage extends React.Component {
     }
 
     this.changeSocialBlock = this.changeSocialBlock.bind(this)
+    this.handleWheel = this.handleWheel.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('wheel', _.debounce(this.handleWheel, 200), {
+      passive: true,
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('wheel', this.handleWheel)
+  }
+
+  handleWheel(event) {
+    const { component } = this.state
+    if (event.deltaY < 0) {
+      component === 0
+        ? this.setState({ component: 2 })
+        : this.setState({ component: (this.state.component - 1) % 3 })
+    }
+    if (event.deltaY > 0) {
+      this.setState({ component: (this.state.component + 1) % 3 })
+    }
   }
 
   changeSocialBlock = number => {
@@ -124,23 +151,30 @@ export default class SocialsPage extends React.Component {
           />
           <SocialsContainer>
             <SocialItems>
-              <a onClick={e => this.changeSocialBlock(0)}>
+              <StyledLink
+                onClick={e => this.changeSocialBlock(0)}
+                active={component === 0}
+              >
                 <IconContext.Provider value={{ className: 'insta' }}>
                   <FaInstagram />
                 </IconContext.Provider>
-              </a>
-              <a onClick={e => this.changeSocialBlock(1)}>
+              </StyledLink>
+              <StyledLink
+                onClick={e => this.changeSocialBlock(1)}
+                active={component === 1}
+              >
                 <IconContext.Provider value={{ className: 'sc' }}>
                   <FaSoundcloud />
                 </IconContext.Provider>
-              </a>
-              <a onClick={e => this.changeSocialBlock(2)}>
-                <IconContext.Provider>
-                  <IconContext.Provider value={{ className: 'spotify' }}>
-                    <FaSpotify />
-                  </IconContext.Provider>
+              </StyledLink>
+              <StyledLink
+                onClick={e => this.changeSocialBlock(2)}
+                active={component === 2}
+              >
+                <IconContext.Provider value={{ className: 'spotify' }}>
+                  <FaSpotify />
                 </IconContext.Provider>
-              </a>
+              </StyledLink>
             </SocialItems>
             <SocialBlock>
               {component === 0 ? (

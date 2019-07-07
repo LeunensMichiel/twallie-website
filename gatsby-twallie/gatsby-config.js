@@ -13,7 +13,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -34,6 +33,7 @@ module.exports = {
         // Add any options here
       },
     },
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
