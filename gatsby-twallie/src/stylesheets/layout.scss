@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
 }
 
 .footer-logo {
@@ -87,4 +88,12 @@ body {
     &.open {
         filter: blur(50px);
     }
+}
+
+.lightwidget-widget {
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    margin-top: -10px;
+    margin-bottom: 20%;
 }

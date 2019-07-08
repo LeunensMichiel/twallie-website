@@ -20,10 +20,8 @@ const StyledFooter = styled.footer`
   position: absolute;
   z-index: 5;
   bottom: 40px;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  left: 0;
+  right: 0;
 `
 const Flex = styled.div`
   display: flex;

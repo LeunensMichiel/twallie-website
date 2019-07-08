@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, [col-start] 69px);
   grid-gap: 0 16px;
-
   > * {
     grid-column: col-start / span 12;
   }

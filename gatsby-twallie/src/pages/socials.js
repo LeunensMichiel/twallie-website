@@ -17,7 +17,7 @@ const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 66%;
+  height: 580px;
   position: absolute;
   left: 50%;
   right: 50%;
@@ -44,7 +44,6 @@ const Background = styled.div`
 const SocialsContainer = styled.div`
   margin-top: 100px;
   width: 100%;
-  height: 220px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -52,7 +51,7 @@ const SocialsContainer = styled.div`
 
 const SocialItems = styled.div`
   width: 85px;
-  height: 100%;
+  height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
