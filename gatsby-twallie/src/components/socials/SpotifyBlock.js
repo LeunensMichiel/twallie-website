@@ -5,10 +5,10 @@ export default class SpotifyBlock extends Component {
     return (
       <>
         <iframe
-          src="https://open.spotify.com/playlist/5tBYrn9DYwU3kZdMvFncSN?si=U5GH9pIMSRa7zte3VZfCuw"
+          src="https://open.spotify.com/embed/playlist/5tBYrn9DYwU3kZdMvFncSN"
           width="100%"
-          height="100%"
-          frameBorder="0"
+          height="380"
+          frameborder="0"
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
