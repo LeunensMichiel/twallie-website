@@ -41,6 +41,10 @@ const StyledLink = styled.a`
   }
 `
 
+const FooterText = styled.small`
+  color: ${colors.foreground};
+`
+
 const date = new Date().getFullYear()
 
 const Footer = () => (
@@ -77,18 +81,16 @@ const Footer = () => (
         </a>
       </IconContext.Provider>{' '}
     </Flex>
-    <div>
-      <small>
-        &copy; Twallie {date}. Made with{' '}
-        <IconContext.Provider value={{ color: colors.secondaryaccent }}>
-          <FaMugHot />
-        </IconContext.Provider>{' '}
-        by{' '}
-        <StyledLink href="http://www.leunesmedia.be/" target="_blank">
-          Leunes Media
-        </StyledLink>
-      </small>
-    </div>
+    <FooterText>
+      &copy; Twallie {date}. Made with{' '}
+      <IconContext.Provider value={{ color: colors.secondaryaccent }}>
+        <FaMugHot />
+      </IconContext.Provider>{' '}
+      by{' '}
+      <StyledLink href="http://www.leunesmedia.be/" target="_blank">
+        Leunes Media
+      </StyledLink>
+    </FooterText>
   </StyledFooter>
 )
 

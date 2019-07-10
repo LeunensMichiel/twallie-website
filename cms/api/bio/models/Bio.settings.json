@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "bios",
+  "info": {
+    "name": "bio",
+    "description": "Schrijf hier uw biografie"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "bioTitle": {
+      "required": true,
+      "type": "string"
+    },
+    "document": {
+      "required": true,
+      "type": "text"
+    },
+    "bottomImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

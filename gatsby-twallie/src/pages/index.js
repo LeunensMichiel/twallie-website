@@ -78,7 +78,7 @@ const IndexPage = ({ data }) => (
           <Flex>
             <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
             <Button text="Press-kit" linkTo="https://www.google.be/" external />
-            <Button text="Wie ben ik?" linkTo="/aboutMe" />
+            <Button text="Wie ben ik?" linkTo="/aboutme" />
           </Flex>
         </LandingContainer>
       </Layout>

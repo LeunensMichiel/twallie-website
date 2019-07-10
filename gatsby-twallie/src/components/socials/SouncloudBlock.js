@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import SoundCloudPlayer from './SoundCloudPlayer'
+// import { StaticQuery, graphql } from 'gatsby'
+// import SoundCloudPlayer from './SoundCloudPlayer'
 
 export default class SouncloudBlock extends Component {
   render() {
-    const twallieUrl =
-      'https://soundcloud.com/deejaytwallie/yearmix-2k18-selected-by-twallie'
-    const { data } = this.props
-    const clientId = process.env.SC_CLIENT_ID || ''
+    // const twallieUrl =
+    //   'https://soundcloud.com/deejaytwallie/yearmix-2k18-selected-by-twallie'
+    // const { data } = this.props
+    // const clientId = process.env.SC_CLIENT_ID || ''
 
     return (
       <>
         <iframe
+          title="soundcloud block"
           width="100%"
           height="380"
           scrolling="no"
