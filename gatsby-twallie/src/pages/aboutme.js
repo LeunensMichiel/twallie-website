@@ -6,34 +6,44 @@ import SEO from '../components/seo'
 import colors from '../components/colors'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import { device } from '../components/device'
 
 const BioWrapper = styled.div`
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   background: ${colors.foreground};
   color: ${colors.background};
+
+  @media ${device.tablet} {
+    margin-top: 40px;
+  }
 `
 
 const BioContainer = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 33%;
-  padding: 50px 0;
-  padding-bottom: 5%;
+  width: 100%;
+  height: auto;
+  padding: 5%;
+
+  @media ${device.laptop} {
+    padding: 5% 0;
+    max-width: 33%;
+  }
 `
 
 const MarkdownGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
-  grid-column-gap: 1em;
+  grid-column-gap: 5%;
   grid-auto-flow: dense;
 
   p {
     font-family: 'Cardo', 'serif';
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 14px;
+    line-height: 22px;
     text-align: justify;
     grid-column: 1 / span 2;
 
@@ -41,29 +51,33 @@ const MarkdownGrid = styled.div`
       font-size: 200%;
       color: ${colors.primaryaccent};
     }
+
+    @media ${device.tablet} {
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 
   img {
     margin-block-start: 1em;
     margin-block-end: 1em;
     width: 100%;
+    grid-column: 1 / span 2;
 
-    &[alt*='center'] {
-      grid-column: 1 / span 2;
-    }
-
-    &[alt*='left'] {
-      grid-column: 1;
-
-      + p {
-        grid-column: 2;
-      }
-    }
-
-    &[alt*='right'] {
-      grid-column: 2;
-      + p {
+    @media ${device.tablet} {
+      &[alt*='left'] {
         grid-column: 1;
+
+        + p {
+          grid-column: 2;
+        }
+      }
+
+      &[alt*='right'] {
+        grid-column: 2;
+        + p {
+          grid-column: 1;
+        }
       }
     }
   }
