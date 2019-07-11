@@ -110,3 +110,9 @@ coverage
 exports
 .cache
 build
+
+############################
+# Strapi Heroku
+############################
+
+package-lock.json

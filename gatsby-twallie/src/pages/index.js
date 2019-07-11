@@ -12,12 +12,15 @@ import Icon from '../images/twallie-logo.svg'
 import { device } from '../components/device'
 
 const LandingContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 10%;
   padding: 0 2em;
+
+  @media (min-width: 370px) {
+    margin-top: 20%;
+  }
 
   @media ${device.laptop} {
     grid-column: col-start 6 / span 5;
-    margin-top: 100px;
     padding: 0;
   }
 `
@@ -27,6 +30,7 @@ const TwallieDescription = styled.p`
   font-size: 16px;
   line-height: 22px;
   text-align: center;
+  margin-bottom: 40px;
 
   @media (min-width: 370px) {
     font-size: 18px;
@@ -108,7 +112,11 @@ const IndexPage = ({ data }) => (
           </TwallieDescription>
           <Flex>
             <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
-            <Button text="Press-kit" linkTo="https://www.google.be/" external />
+            <Button
+              text="Press-kit"
+              linkTo="https://imgur.com/UJKKXOB"
+              external
+            />
             <Button text="Wie ben ik?" linkTo="/aboutme" />
           </Flex>
         </LandingContainer>
