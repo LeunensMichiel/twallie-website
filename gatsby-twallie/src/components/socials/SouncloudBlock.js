@@ -14,7 +14,8 @@ export default class SouncloudBlock extends Component {
         <iframe
           title="soundcloud block"
           width="100%"
-          height="380"
+          height="100%"
+          className="iframes"
           scrolling="no"
           frameBorder="no"
           allow="autoplay"

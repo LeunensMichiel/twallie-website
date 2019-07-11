@@ -10,6 +10,7 @@ import SpotifyBlock from '../components/socials/SpotifyBlock'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import colors from '../components/colors'
+import { device } from '../components/device'
 
 const Background = styled.div`
   background-image: url(${props => (props.imgSrc ? props.imgSrc : '')});
@@ -42,25 +43,51 @@ const Background = styled.div`
 `
 
 const SocialsContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+
+  @media ${device.laptop} {
+    margin-top: 100px;
+    flex-direction: row;
+    padding: 0;
+  }
 `
 
 const SocialItems = styled.div`
-  width: 85px;
-  height: 220px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
   align-content: flex-start;
-  padding-right: 16px;
-  border-right: 2px solid ${colors.backgroundaccent};
+  justify-content: space-evenly;
+  border-bottom: 2px solid ${colors.backgroundaccent};
+  padding-bottom: 16px;
+
+  @media ${device.laptop} {
+    width: 85px;
+    height: 220px;
+    flex-direction: column;
+    padding-right: 16px;
+    justify-content: space-between;
+    border-right: 2px solid ${colors.backgroundaccent};
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-right: 5%;
+  }
 `
 const SocialBlock = styled.div`
-  width: 834px;
+  margin: 5% 0;
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px;
+
+  @media ${device.laptop} {
+    margin-top: 0;
+    margin-bottom: 10%;
+    max-width: 834px;
+  }
 `
 
 const StyledLink = styled.a`

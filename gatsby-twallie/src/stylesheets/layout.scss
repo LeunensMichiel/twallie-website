@@ -26,6 +26,10 @@ body {
     position: relative;
 }
 
+#___gatsby {
+    width: 100%;
+}
+
 .modal {
     background-color: rgba(22, 25, 25, .7);
     width: 100%;
@@ -85,6 +89,16 @@ body {
     width: 100%;
     overflow: hidden;
     border: none;
-    margin-top: -10px;
-    margin-bottom: 20%;
+}
+
+.iframes {
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    height: 320px;
+
+    @media (min-width: 786px) {
+        height: 380px;
+
+    }
 }

@@ -24,12 +24,12 @@ const BioContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 834px;
   height: auto;
   padding: 5%;
 
   @media ${device.laptop} {
     padding: 5% 0;
-    max-width: 33%;
   }
 `
 
