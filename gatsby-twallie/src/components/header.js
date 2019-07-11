@@ -3,18 +3,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 import colors from './colors'
+import { device } from './device'
 
 const Navigation = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
+
+  @media ${device.tablet} {
+    margin-top: 40px;
+  }
 `
 
 const StyledLink = styled(Link)`
   color: ${colors.foreground};
-  font-size: 24px;
   text-transform: capitalize;
   text-decoration: none;
   padding: 4px 0;
@@ -25,6 +29,10 @@ const StyledLink = styled(Link)`
   &:hover {
     color: ${colors.secondaryaccent};
     transition: all ease 0.1s;
+  }
+
+  @media ${device.tablet} {
+    font-size: 20px;
   }
 `
 

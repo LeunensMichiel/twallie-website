@@ -9,26 +9,49 @@ import {
 } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import colors from './colors'
+import { device } from './device'
 
 const StyledFooter = styled.footer`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-row-gap: 18px;
+  grid-row-gap: 12px;
   align-items: center;
   justify-items: center;
   position: absolute;
   z-index: 5;
-  bottom: 40px;
+  bottom: 20px;
   left: 0;
   right: 0;
+
+  @media ${device.laptop} {
+    bottom: 40px;
+    grid-row-gap: 18px;
+  }
 `
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 160px;
+  max-width: 160px;
+  width: 100%;
+
+  .footer-logo {
+    color: ${colors.foreground};
+    font-size: 24px;
+    transition: ease 0.3s;
+
+    &:hover,
+    &:focus {
+      color: ${colors.secondaryaccent};
+      transition: ease 0.2s;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
 
 const StyledLink = styled.a`
@@ -41,9 +64,7 @@ const StyledLink = styled.a`
   }
 `
 
-const FooterText = styled.small`
-  color: ${colors.foreground};
-`
+const FooterText = styled.small``
 
 const date = new Date().getFullYear()
 

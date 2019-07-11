@@ -9,16 +9,35 @@ import TwallieModal from '../components/home/TwallieModal'
 import ContactMe from '../components/home/ContactMe'
 
 import Icon from '../images/twallie-logo.svg'
+import { device } from '../components/device'
 
 const LandingContainer = styled.div`
-  margin-top: 100px;
-  grid-column: col-start 6 / span 7;
+  margin-top: 30px;
+  padding: 0 2em;
+
+  @media ${device.laptop} {
+    grid-column: col-start 6 / span 5;
+    margin-top: 100px;
+    padding: 0;
+  }
 `
 
 const TwallieDescription = styled.p`
   font-family: 'Cardo', serif;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+
+  @media (min-width: 370px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+  }
 `
 const Background = styled.div`
   background-image: url(${props => (props.imgSrc ? props.imgSrc : '')});
@@ -52,10 +71,22 @@ const Background = styled.div`
 
 const Flex = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  > * {
+    margin-bottom: 25px;
+  }
+
+  @media ${device.laptop} {
+    flex-direction: row;
+
+    > * {
+      margin-bottom: 0;
+    }
+  }
 `
 
 const IndexPage = ({ data }) => (

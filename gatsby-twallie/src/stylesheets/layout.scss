@@ -26,36 +26,26 @@ body {
     position: relative;
 }
 
-.footer-logo {
-    color: $foreground;
-    font-size: 24px;
-    transition: ease .3s;
-
-    &:hover,
-    &:focus {
-        color: $secondary-accent;
-        transition: ease .2s;
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
 .modal {
     background-color: rgba(22, 25, 25, .7);
-    min-width: 1004px;
-    min-height: 544px;
+    width: 100%;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     padding: 0;
+    border-radius: 2px;
 
     button {
         outline: none;
+    }
+
+    @media (min-width: 1025px) {
+        min-width: 1004px;
+        min-height: 544px;
     }
 }
 
 .overlay {
     background-color: transparent;
+    padding: 0;
 }
 
 .modalCloseBtn {
@@ -63,7 +53,8 @@ body {
     transition: ease .2s;
     outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
         fill: $secondary-accent;
         transition: ease .2s;
         cursor: pointer;

@@ -11,24 +11,41 @@ import { IconContext } from 'react-icons'
 import DatePicker from 'react-datepicker'
 import nl from 'date-fns/locale/nl'
 
-import 'react-datepicker/dist/react-datepicker.css'
+import '../../stylesheets/datetimepicker.css'
 import Button from '../button'
 import colors from '../colors'
+import { device } from '../device'
 
 const Flex = styled.div`
+  padding: 2em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-end;
-  min-height: 544px;
-  padding: 69px 85px;
+  align-items: center;
+
+  @media ${device.laptop} {
+    min-height: 544px;
+    flex-direction: row;
+    padding: 69px 85px;
+    align-items: flex-start;
+  }
 `
 
 const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &.selfalign {
+    align-self: flex-end;
+  }
+
+  @media ${device.laptop} {
+    justify-content: stretch;
+    align-items: flex-start;
+  }
 `
 
 const FlexRight = styled.div`
@@ -36,12 +53,13 @@ const FlexRight = styled.div`
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-end;
-  margin-bottom: 22px;
+  width: 100%;
+  max-width: 350px;
 `
 
 const Title = styled.h1`
-  font-size: 72px;
-  line-height: 100px;
+  font-size: 48px;
+  line-height: 71px;
   margin: 0;
   margin-bottom: 15px;
   &::after {
@@ -50,15 +68,22 @@ const Title = styled.h1`
     width: 155px;
     display: block;
   }
+
+  @media ${device.laptop} {
+    font-size: 72px;
+    line-height: 100px;
+  }
 `
 
 const FormInput = styled.div`
   position: relative;
   margin: 12px 0;
+  width: 100%;
+  max-width: 350px;
 
   textarea {
     resize: none;
-    height: 195px;
+    height: 162px;
 
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
@@ -75,7 +100,7 @@ const FormInput = styled.div`
     font-size: 16px;
     padding: 15px 30px 15px 0;
     display: block;
-    width: 350px;
+    width: 100%;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid ${colors.foreground + 'A8'};
@@ -84,7 +109,7 @@ const FormInput = styled.div`
       outline: none;
     }
     &:focus ~ .bar:before {
-      width: 350px;
+      width: 100%;
     }
 
     &:focus ~ .form-icons {
@@ -94,14 +119,23 @@ const FormInput = styled.div`
   }
 
   .react-datepicker-wrapper {
+    width: 100%;
+    z-index: 44;
+    & > div {
+      width: 100%;
+    }
+    & ~ div {
+      z-index: 6;
+    }
     &:focus-within ~ .bar:before {
-      width: 350px;
+      width: 100%;
     }
     &:focus-within ~ .form-icons {
       color: ${colors.primaryaccent};
       transition: ease 0.3s;
     }
   }
+
   .form-icons {
     color: ${colors.foreground + 'A8'};
     position: absolute;
@@ -112,12 +146,12 @@ const FormInput = styled.div`
   .bar {
     position: relative;
     display: block;
-    width: 350px;
+    width: 100%;
     &:before {
       content: '';
       height: 2px;
       width: 0;
-      bottom: 0px;
+      bottom: 0;
       position: absolute;
       background: ${colors.primaryaccent};
       transition: 0.2s ease;
@@ -127,6 +161,7 @@ const FormInput = styled.div`
 `
 
 const Note = styled.small`
+  margin: 12px 0;
   color: ${colors.foreground + '80'};
 `
 
@@ -169,7 +204,6 @@ class ContactMe extends React.Component {
             </FormInput>
             <FormInput>
               <DatePicker
-                className="datepicker"
                 locale={nl}
                 selected={this.state.startDate}
                 onChange={this.handleChange}
@@ -195,9 +229,8 @@ class ContactMe extends React.Component {
               <span className="bar"></span>
               <FaMapMarkerAlt />
             </FormInput>
-            <Note>Velden met een * zijn verplicht</Note>
           </FlexCol>
-          <FlexCol>
+          <FlexCol className="selfalign">
             <FlexRight>
               <FormInput>
                 <textarea name="Message" required placeholder="Bericht*" />
@@ -206,6 +239,7 @@ class ContactMe extends React.Component {
                 <FaCommentAlt />
               </FormInput>
               <Button text="Verstuur" external form />
+              <Note>Velden met een * zijn verplicht</Note>
             </FlexRight>
           </FlexCol>
         </IconContext.Provider>
