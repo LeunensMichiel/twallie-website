@@ -44,23 +44,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Oswald`,
-            subsets: [`latin`],
-            variants: [`400`],
-          },
-          {
-            family: `Cardo`,
-            subsets: [`latin`],
-            variants: [`400`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
