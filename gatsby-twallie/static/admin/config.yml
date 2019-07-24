@@ -5,13 +5,63 @@ backend:
 media_folder: static/assets
 public_folder: assets
 
+site_url: https://vibrant-brahmagupta-e1bcd8.netlify.com
+logo_url: '../../src/images/twallie-logo.svg'
+
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+  - label: 'Pages'
+    name: 'pages'
+    files:
+      - label: 'Landing Page'
+        name: 'index'
+        file: '"src/pages/index.md'
+        fields:
+          - {
+              label: 'Twallie Description',
+              name: 'twallieDescription',
+              hint: 'Zet hier uw beschrijving, dat onder uw logo staat, op uw landingspagina',
+              widget: 'string',
+            }
+          - label: 'Landing Background Image'
+            name: 'landingImage'
+            hint: 'Zet hier uw afbeelding voor uw Landingspagina'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
+      - label: 'Socials Page'
+        name: 'socials'
+        file: '"src/pages/index.md'
+        fields:
+          - label: 'Socials Background Image'
+            hint: 'Zet hier uw afbeelding voor uw Socials pagina'
+            name: 'socialsImage'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
+          - {
+              label: 'Soundcloud Embed URL',
+              hint: 'Zet hier de URL van uw SoundCloud schijf. Op een nummer op SC: Share -> Embed -> In dat stukje code dat begint met <iframe> zoek je het stukje src="LINK". De volledige lange link tussen aanhalingstekens (zonder die src=""), kopieer je. Dit is een lange link. Zie dat je alles meehebt.',
+              name: 'soundcloudUrl',
+              widget: 'string',
+            }
+          - {
+              label: 'Spotify Embed URL',
+              name: 'spotifyUrl',
+              widget: 'string',
+              hint: 'Zet hier de URL van uw Spotify Playlist. Ga naar je playlist -> share -> Copy Embed Code. Kopieer dit even ergens anders. In dat stukje code dat begint met <iframe> zoek je het stukje src="LINK". De volledige lange link tussen aanhalingstekens (zonder die src=""), kopieer je. Dit is een lange link. Zie dat je alles meehebt.',
+            }
+      - label: 'About Page'
+        name: 'aboutme'
+        file: '"src/pages/aboutme.md'
+        fields:
+          - { label: Title, name: aboutTitle, widget: string }
+          - label: 'About Me Footer Image'
+            hint: 'Zet hier uw afbeelding dat vanonder op je about-me sectie pagina staat.'
+            name: 'aboutImage'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
+          - { label: About Me Blog, name: aboutMeMd, widget: markdown }
