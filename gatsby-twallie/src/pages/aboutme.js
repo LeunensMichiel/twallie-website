@@ -141,18 +141,18 @@ export class aboutme extends PureComponent {
         <Header />
         <BioWrapper>
           <BioContainer>
-            <Title>{data.strapiBio.bioTitle}</Title>
-            <MarkdownGrid>
+            <Title>Lorem Ipsum</Title>
+            {/* <MarkdownGrid>
               <ReactMarkdown
                 source={data.strapiBio.document}
                 renderers={{
                   paragraph: this.renderParagraph,
                 }}
               />
-            </MarkdownGrid>
+            </MarkdownGrid> */}
           </BioContainer>
           <BottomImage
-            imgUrl={data.strapiBio.bottomImage.childImageSharp.fluid.src}
+          // imgUrl={data.strapiBio.bottomImage.childImageSharp.fluid.src}
           />
         </BioWrapper>
         <Footer />
@@ -163,19 +163,19 @@ export class aboutme extends PureComponent {
 
 export default aboutme
 
-export const aboutQuery = graphql`
-  query aboutPageQuery {
-    strapiBio(strapiId: { eq: 1 }) {
-      id
-      bioTitle
-      bottomImage {
-        childImageSharp {
-          fluid(quality: 77, maxWidth: 2048) {
-            src
-          }
-        }
-      }
-      document
-    }
-  }
-`
+// export const aboutQuery = graphql`
+//   query aboutPageQuery {
+//     strapiBio(strapiId: { eq: 1 }) {
+//       id
+//       bioTitle
+//       bottomImage {
+//         childImageSharp {
+//           fluid(quality: 77, maxWidth: 2048) {
+//             src
+//           }
+//         }
+//       }
+//       document
+//     }
+//   }
+// `

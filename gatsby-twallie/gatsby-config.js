@@ -44,14 +44,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: `http://localhost:1337`,
-        queryLimit: 100, // Default to 100
-        contentTypes: [`page`, `user`, `bio`],
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: `http://localhost:1337`,
+    //     queryLimit: 100, // Default to 100
+    //     contentTypes: [`page`, `user`, `bio`],
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,

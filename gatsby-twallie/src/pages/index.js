@@ -97,7 +97,7 @@ const IndexPage = ({ data }) => (
   <>
     <div className="blurwrapper">
       <Background
-        imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
+      // imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
       />
       <Layout>
         <SEO
@@ -108,7 +108,8 @@ const IndexPage = ({ data }) => (
         <LandingContainer>
           <Icon />
           <TwallieDescription>
-            {data.strapiPage.twallieDescription}
+            Lorem ipsum
+            {/* {data.strapiPage.twallieDescription} */}
           </TwallieDescription>
           <Flex>
             <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
@@ -127,20 +128,20 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-export const pageQuery = graphql`
-  query indexPageQuery {
-    strapiPage(type: { eq: "home" }) {
-      id
-      type
-      twallieDescription
-      pageBackground {
-        id
-        childImageSharp {
-          fluid(quality: 77, maxWidth: 2048, fit: COVER) {
-            src
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query indexPageQuery {
+//     strapiPage(type: { eq: "home" }) {
+//       id
+//       type
+//       twallieDescription
+//       pageBackground {
+//         id
+//         childImageSharp {
+//           fluid(quality: 77, maxWidth: 2048, fit: COVER) {
+//             src
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

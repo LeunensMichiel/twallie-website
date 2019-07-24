@@ -162,12 +162,12 @@ export default class SocialsPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props
+    // const { data } = this.props
     const { component } = this.state
     return (
       <>
         <Background
-          imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
+        // imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
         />{' '}
         <Layout>
           <SEO
@@ -218,20 +218,20 @@ export default class SocialsPage extends React.Component {
   }
 }
 
-export const pageQuery = graphql`
-  query socialsPageQuery {
-    strapiPage(type: { eq: "socials" }) {
-      id
-      type
-      twallieDescription
-      pageBackground {
-        id
-        childImageSharp {
-          fluid(quality: 77, maxWidth: 2048, fit: COVER) {
-            src
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query socialsPageQuery {
+//     strapiPage(type: { eq: "socials" }) {
+//       id
+//       type
+//       twallieDescription
+//       pageBackground {
+//         id
+//         childImageSharp {
+//           fluid(quality: 77, maxWidth: 2048, fit: COVER) {
+//             src
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
