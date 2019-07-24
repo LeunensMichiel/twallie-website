@@ -14,7 +14,7 @@ collections:
     files:
       - label: 'Landing Page'
         name: 'index'
-        file: '"src/pages/index.md'
+        file: '"gatsby-twallie/src/pages/index.md'
         fields:
           - {
               label: 'Twallie Description',
@@ -31,7 +31,7 @@ collections:
                 multiple: false
       - label: 'Socials Page'
         name: 'socials'
-        file: '"src/pages/socials.md'
+        file: '"gatsby-twallie/src/pages/socials.md'
         fields:
           - label: 'Socials Background Image'
             hint: 'Zet hier uw afbeelding voor uw Socials pagina'
@@ -54,7 +54,7 @@ collections:
             }
       - label: 'About Page'
         name: 'aboutme'
-        file: '"src/pages/aboutme.md'
+        file: '"gatsby-twallie/src/pages/aboutme.md'
         fields:
           - { label: Title, name: aboutTitle, widget: string }
           - label: 'About Me Footer Image'
