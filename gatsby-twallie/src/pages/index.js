@@ -93,55 +93,58 @@ const Flex = styled.div`
   }
 `
 
-const IndexPage = ({ data }) => (
-  <>
-    <div className="blurwrapper">
-      <Background
-      // imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
-      />
-      <Layout>
-        <SEO
-          title="Boekings"
-          description="Boek Deejay Twallie // Home Pagina"
-          lang="nl"
-        />
-        <LandingContainer>
-          <Icon />
-          <TwallieDescription>
-            Lorem ipsum
-            {/* {data.strapiPage.twallieDescription} */}
-          </TwallieDescription>
-          <Flex>
-            <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
-            <Button
-              text="Press-kit"
-              linkTo="https://imgur.com/UJKKXOB"
-              external
-            />
-            <Button text="Wie ben ik?" linkTo="/aboutme" />
-          </Flex>
-        </LandingContainer>
-      </Layout>
-    </div>
-  </>
-)
+const IndexPage = props => {
+  const data = props.data.allMarkdownRemark.edges[0].node.frontmatter
+  return (
+    <>
+      <div className="blurwrapper">
+        <Background imgSrc={data.landingImage.childImageSharp.fluid.src} />
+        <Layout>
+          <SEO
+            title="Boekings"
+            description="Boek Deejay Twallie // Home Pagina"
+            lang="nl"
+          />
+          <LandingContainer>
+            <Icon />
+            <TwallieDescription>{data.twallieDescription}</TwallieDescription>
+            <Flex>
+              <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
+              <Button
+                text="Press-kit"
+                linkTo="https://imgur.com/UJKKXOB"
+                external
+              />
+              <Button text="Wie ben ik?" linkTo="/aboutme" />
+            </Flex>
+          </LandingContainer>
+        </Layout>
+      </div>
+    </>
+  )
+}
 
 export default IndexPage
 
-// export const pageQuery = graphql`
-//   query indexPageQuery {
-//     strapiPage(type: { eq: "home" }) {
-//       id
-//       type
-//       twallieDescription
-//       pageBackground {
-//         id
-//         childImageSharp {
-//           fluid(quality: 77, maxWidth: 2048, fit: COVER) {
-//             src
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(index)\\\\.+/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            landingImage {
+              childImageSharp {
+                fluid(quality: 77, maxWidth: 2048, fit: COVER) {
+                  src
+                }
+              }
+            }
+            twallieDescription
+          }
+        }
+      }
+    }
+  }
+`

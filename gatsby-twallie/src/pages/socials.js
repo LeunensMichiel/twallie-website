@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import _ from 'lodash'
 import { FaSoundcloud, FaSpotify, FaInstagram } from 'react-icons/fa'
@@ -162,13 +163,11 @@ export default class SocialsPage extends React.Component {
   }
 
   render() {
-    // const { data } = this.props
+    const data = this.props.data.allMarkdownRemark.edges[0].node.frontmatter
     const { component } = this.state
     return (
       <>
-        <Background
-        // imgSrc={data.strapiPage.pageBackground.childImageSharp.fluid.src}
-        />{' '}
+        <Background imgSrc={data.socialsImage.childImageSharp.fluid.src} />{' '}
         <Layout>
           <SEO
             title="Socials"
@@ -206,9 +205,9 @@ export default class SocialsPage extends React.Component {
               {component === 0 ? (
                 <InstaBlock />
               ) : component === 1 ? (
-                <SoundcloudBlock />
+                <SoundcloudBlock embedUrl={data.soundcloudUrl} />
               ) : (
-                <SpotifyBlock />
+                <SpotifyBlock embedUrl={data.spotifyUrl} />
               )}
             </SocialBlock>
           </SocialsContainer>
@@ -218,20 +217,26 @@ export default class SocialsPage extends React.Component {
   }
 }
 
-// export const pageQuery = graphql`
-//   query socialsPageQuery {
-//     strapiPage(type: { eq: "socials" }) {
-//       id
-//       type
-//       twallieDescription
-//       pageBackground {
-//         id
-//         childImageSharp {
-//           fluid(quality: 77, maxWidth: 2048, fit: COVER) {
-//             src
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query SocialsPageQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(socials)\\\\.+/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            socialsImage {
+              childImageSharp {
+                fluid(quality: 77, maxWidth: 2048) {
+                  src
+                }
+              }
+            }
+            spotifyUrl
+            soundcloudUrl
+          }
+        }
+      }
+    }
+  }
+`

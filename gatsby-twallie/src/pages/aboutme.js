@@ -130,7 +130,7 @@ export class aboutme extends PureComponent {
   }
 
   render() {
-    const { data } = this.props
+    const data = this.props.data.allMarkdownRemark.edges[0].node.frontmatter
     return (
       <>
         <SEO
@@ -141,19 +141,17 @@ export class aboutme extends PureComponent {
         <Header />
         <BioWrapper>
           <BioContainer>
-            <Title>Lorem Ipsum</Title>
-            {/* <MarkdownGrid>
+            <Title>{data.aboutTitle}</Title>
+            <MarkdownGrid>
               <ReactMarkdown
-                source={data.strapiBio.document}
+                source={data.aboutMeMd}
                 renderers={{
                   paragraph: this.renderParagraph,
                 }}
               />
-            </MarkdownGrid> */}
+            </MarkdownGrid>
           </BioContainer>
-          <BottomImage
-          // imgUrl={data.strapiBio.bottomImage.childImageSharp.fluid.src}
-          />
+          <BottomImage imgUrl={data.aboutImage.childImageSharp.fluid.src} />
         </BioWrapper>
         <Footer />
       </>
@@ -163,19 +161,26 @@ export class aboutme extends PureComponent {
 
 export default aboutme
 
-// export const aboutQuery = graphql`
-//   query aboutPageQuery {
-//     strapiBio(strapiId: { eq: 1 }) {
-//       id
-//       bioTitle
-//       bottomImage {
-//         childImageSharp {
-//           fluid(quality: 77, maxWidth: 2048) {
-//             src
-//           }
-//         }
-//       }
-//       document
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query AboutPageQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(aboutme)\\\\.+/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            aboutTitle
+            aboutMeMd
+            aboutImage {
+              childImageSharp {
+                fluid(quality: 77, maxWidth: 2048) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
