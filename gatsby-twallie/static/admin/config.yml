@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/img
+public_folder: /img
 
 site_url: https://vibrant-brahmagupta-e1bcd8.netlify.com
-logo_url: '../../src/images/twallie-logo.svg'
+logo_url: https://vibrant-brahmagupta-e1bcd8.netlify.com/img/twallie-logo.svg
 
 collections:
   - label: 'Pages'
@@ -31,7 +31,7 @@ collections:
                 multiple: false
       - label: 'Socials Page'
         name: 'socials'
-        file: '"src/pages/index.md'
+        file: '"src/pages/socials.md'
         fields:
           - label: 'Socials Background Image'
             hint: 'Zet hier uw afbeelding voor uw Socials pagina'
