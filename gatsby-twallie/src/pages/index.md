@@ -1,5 +1,5 @@
 ---
-twallieDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+twallieDescription: All around DJ
 landingImage: /img/_1077816.jpg
 ---
 
