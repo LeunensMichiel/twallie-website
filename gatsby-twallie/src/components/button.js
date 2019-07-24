@@ -126,6 +126,7 @@ const Button = ({ text, linkTo, external, onClick, form }) => (
         rel="noopener noreferrer"
         onClick={onClick}
         form={form ? 1 : 0}
+        type={form ? 'submit' : ''}
       >
         {text}
       </StyledButton>

@@ -16,7 +16,7 @@ import Button from '../button'
 import colors from '../colors'
 import { device } from '../device'
 
-const Flex = styled.div`
+const Form = styled.form`
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -181,13 +181,20 @@ class ContactMe extends React.Component {
   }
   render() {
     return (
-      <Flex>
+      <Form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        action="/thanks"
+        netlify-honeypot="bot"
+      >
+        <input name="bot" type="hidden" value="contact" />
         <IconContext.Provider value={{ className: 'form-icons' }}>
           <FlexCol>
             <Title>BOEKEN?</Title>
             <FormInput>
               <input
-                name="Full Name"
+                name="fullName"
                 type="text"
                 required
                 placeholder="Voornaam & Naam*"
@@ -197,7 +204,7 @@ class ContactMe extends React.Component {
               <FaUserCircle />
             </FormInput>
             <FormInput>
-              <input name="Email" type="text" required placeholder="E-mail*" />
+              <input name="email" type="email" required placeholder="E-mail*" />
               <span className="highlight"></span>
               <span className="bar"></span>
               <FaEnvelope />
@@ -214,6 +221,7 @@ class ContactMe extends React.Component {
                 timeCaption="Uur"
                 minDate={new Date()}
                 placeholderText="Datum & Tijd Event"
+                name="dateTime"
               />
               <span className="highlight"></span>
               <span className="bar"></span>
@@ -221,7 +229,7 @@ class ContactMe extends React.Component {
             </FormInput>
             <FormInput>
               <input
-                name="Location"
+                name="eventAndLocation"
                 type="text"
                 placeholder="Naam & Locatie Event"
               />
@@ -233,7 +241,7 @@ class ContactMe extends React.Component {
           <FlexCol className="selfalign">
             <FlexRight>
               <FormInput>
-                <textarea name="Message" required placeholder="Bericht*" />
+                <textarea name="message" required placeholder="Bericht*" />
                 <span className="highlight"></span>
                 <span className="bar"></span>
                 <FaCommentAlt />
@@ -243,7 +251,7 @@ class ContactMe extends React.Component {
             </FlexRight>
           </FlexCol>
         </IconContext.Provider>
-      </Flex>
+      </Form>
     )
   }
 }
