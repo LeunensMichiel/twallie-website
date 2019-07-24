@@ -20,7 +20,8 @@ const LandingContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    grid-column: col-start 6 / span 5;
+    grid-column: 6 / span 4;
+    margin-top: 15%;
     padding: 0;
   }
 `
@@ -77,7 +78,7 @@ const Flex = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   > * {
@@ -100,11 +101,7 @@ const IndexPage = props => {
       <div className="blurwrapper">
         <Background imgSrc={data.landingImage.childImageSharp.fluid.src} />
         <Layout>
-          <SEO
-            title="Boeking"
-            description="Boek Twallie"
-            lang="nl"
-          />
+          <SEO title="Boeking" description="Boek Twallie" lang="nl" />
           <LandingContainer>
             <Icon />
             <TwallieDescription>{data.twallieDescription}</TwallieDescription>

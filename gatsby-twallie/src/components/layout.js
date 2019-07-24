@@ -8,18 +8,19 @@ import '../stylesheets/layout.scss'
 import { device } from './device'
 
 const Wrapper = styled.div`
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, [col-start] 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 0 10px;
 
   > * {
-    grid-column: col-start / span 4;
+    grid-column: 1 / span 4;
   }
   @media ${device.laptop} {
-    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 16px;
     > * {
-      grid-column: col-start / span 12;
+      grid-column: 1 / span 12;
     }
   }
 `
