@@ -112,7 +112,7 @@ const IndexPage = props => {
               <TwallieModal buttonText="Boek mij" content={<ContactMe />} />
               <Button
                 text="Press-kit"
-                linkTo="https://imgur.com/UJKKXOB"
+                linkTo="https://www.dropbox.com/sh/7apd9bfn32mgki7/AAD5K8s4N9AhE7ncc4xJ6eIea?dl=0"
                 external
               />
               <Button text="Wie ben ik?" linkTo="/aboutme" />
