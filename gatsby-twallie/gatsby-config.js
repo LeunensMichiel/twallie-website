@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Website of Deejay Twallie`,
-    description: `This is the website/portfolio of the belgian DJ/upcoming producer Deejay Twallie`,
+    title: `Twallie Official Site`,
+    description: `This is the website/portfolio of the Belgian DJ, Twallie`,
     author: `Leunes Media`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Deejay Twallie portfolio`,
-        short_name: `Deejay Twallie`,
+        name: `Twallie Official Site`,
+        short_name: `Twallie`,
         start_url: `/`,
         background_color: `#161919`,
         theme_color: `#161919`,

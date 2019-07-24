@@ -171,7 +171,7 @@ export default class SocialsPage extends React.Component {
         <Layout>
           <SEO
             title="Socials"
-            description="Socials van Deejay Twallie // Socials Pagina"
+            description="Socials van Twallie"
             lang="nl"
           />
           <SocialsContainer>

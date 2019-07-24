@@ -134,8 +134,8 @@ export class aboutme extends PureComponent {
     return (
       <>
         <SEO
-          title="Over mij"
-          description="Wie ben ik? // Deejay Twallie"
+          title="Twallie || Over mij"
+          description="Wie ben ik? // Twallie"
           lang="nl"
         />
         <Header />

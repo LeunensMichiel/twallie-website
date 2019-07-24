@@ -101,8 +101,8 @@ const IndexPage = props => {
         <Background imgSrc={data.landingImage.childImageSharp.fluid.src} />
         <Layout>
           <SEO
-            title="Boekings"
-            description="Boek Deejay Twallie // Home Pagina"
+            title="Boeking"
+            description="Boek Twallie"
             lang="nl"
           />
           <LandingContainer>

@@ -5,8 +5,8 @@ backend:
 media_folder: gatsby-twallie/static/img
 public_folder: img
 
-site_url: https://vibrant-brahmagupta-e1bcd8.netlify.com
-logo_url: https://vibrant-brahmagupta-e1bcd8.netlify.com/img/twallie-logo.svg
+site_url: https://deejaytwallie.com
+logo_url: https://deejaytwallie.com/img/twallie-logo.svg
 
 collections:
   - label: 'Pages'

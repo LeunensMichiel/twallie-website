@@ -6,10 +6,10 @@ export default class InstaBlock extends Component {
     return (
       <>
         <Helmet>
-          <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
         </Helmet>
         <iframe
-          src="//lightwidget.com/widgets/f878570687cc58958ac133b699d692cf.html"
+          src="https://cdn.lightwidget.com/widgets/67bcdbd9f602576fa6a61a3d5fdbea9c.html"
           scrolling="no"
           allowtransparency="true"
           className="lightwidget-widget"
