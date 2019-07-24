@@ -43,6 +43,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
