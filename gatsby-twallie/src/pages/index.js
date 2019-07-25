@@ -20,9 +20,13 @@ const LandingContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    grid-column: 6 / span 4;
+    grid-column: 6 / span 5;
     margin-top: 15%;
     padding: 0;
+  }
+
+  @media ${device.desktop} {
+    grid-column: 6 / span 4;
   }
 `
 

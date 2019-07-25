@@ -12,7 +12,6 @@ import DatePicker from 'react-datepicker'
 import nl from 'date-fns/locale/nl'
 
 import '../../stylesheets/datetimepicker.css'
-import Button from '../button'
 import colors from '../colors'
 import { device } from '../device'
 
@@ -169,6 +168,63 @@ const Note = styled.small`
   color: ${colors.foreground + '80'};
 `
 
+const StyledButton = styled.button`
+  background: none;
+  border: 2px solid ${colors.foreground};
+  border-radius: 4px;
+  transition-duration: ease 0.3s;
+  width: 154px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: ${colors.foreground};
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 27px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 4;
+  margin-top: 25px;
+
+  &:before {
+    position: relative;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: ${colors.secondaryaccent};
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    border-color: ${colors.secondaryaccent};
+    transition: all 0.3s;
+  }
+
+  &:hover:after {
+    height: 260%;
+    opacity: 1;
+  }
+
+  &:active:after {
+    height: 400%;
+    opacity: 1;
+  }
+`
+
 class ContactMe extends React.Component {
   constructor(props) {
     super(props)
@@ -258,7 +314,7 @@ class ContactMe extends React.Component {
                   <span className="bar"></span>
                   <FaCommentAlt />
                 </FormInput>
-                <Button text="Verstuur" external form />
+                <StyledButton type="submit">VERSTUUR</StyledButton>
                 <Note>Velden met een * zijn verplicht</Note>
               </FlexRight>
             </FlexCol>
