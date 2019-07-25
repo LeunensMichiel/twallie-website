@@ -187,6 +187,7 @@ class ContactMe extends React.Component {
         data-netlify="true"
         action="/thanks"
         netlify-honeypot="bot"
+        netlify
       >
         <input name="bot" type="hidden" value="contact" />
         <Flex>
