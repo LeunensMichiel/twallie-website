@@ -10,7 +10,6 @@ import {
 import { IconContext } from 'react-icons'
 import DatePicker from 'react-datepicker'
 import nl from 'date-fns/locale/nl'
-import { navigateTo } from 'gatsby-link'
 
 import '../../stylesheets/datetimepicker.css'
 import colors from '../colors'
@@ -80,10 +79,6 @@ const FormInput = styled.div`
   margin: 12px 0;
   width: 100%;
   max-width: 350px;
-
-  &.field__hidden {
-    display: none;
-  }
 
   textarea {
     resize: none;
@@ -226,12 +221,6 @@ const StyledButton = styled.button`
   }
 `
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 class ContactMe extends React.Component {
   constructor(props) {
     super(props)
@@ -247,39 +236,21 @@ class ContactMe extends React.Component {
     })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...this.state,
-      }),
-    })
-      .then(() => navigateTo(form.getAttribute('action')))
-      .catch(error => alert(error))
-  }
-
   render() {
     return (
       <form
-        name="contactform"
-        method="POST"
-        action="/thanks/"
+        name="contact"
+        method="post"
+        action="/thanks"
         data-netlify="true"
-        data-netlify-honeypot="bot"
-        onSubmit={this.handleSubmit}
+        data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="form-name" value="contactform" />
+        <input type="hidden" name="form-name" value="contact" />
+        <input name="bot-field" style={{ display: 'none' }} />
         <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
             <FlexCol>
               <Title>BOEKEN?</Title>
-              <FormInput className="field__hidden">
-                <input name="bot" />
-              </FormInput>
               <FormInput>
                 <input
                   name="fullName"
