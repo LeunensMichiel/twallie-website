@@ -120,11 +120,14 @@ const IndexPage = props => {
             </Flex>
           </LandingContainer>
         </Layout>
+
+        {/* <!-- A little help for the Netlify post-processing bots --> */}
         <form
           name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           hidden
+          action="/thanks"
         >
           <input type="text" name="fullName" />
           <input type="email" name="email" />

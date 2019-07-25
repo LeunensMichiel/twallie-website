@@ -97,7 +97,7 @@ const FormInput = styled.div`
     background: none;
     color: ${colors.foreground};
     font-size: 16px;
-    padding: 15px 30px 15px 0;
+    padding: 15px 30px 15px 5px;
     display: block;
     width: 100%;
     border: none;
@@ -139,7 +139,7 @@ const FormInput = styled.div`
     color: ${colors.foreground + 'A8'};
     position: absolute;
     top: 18px;
-    right: 0px;
+    right: 5px;
   }
 
   .bar {
