@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
 

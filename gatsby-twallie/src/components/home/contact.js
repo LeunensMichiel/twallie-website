@@ -10,6 +10,7 @@ import {
 import { IconContext } from 'react-icons'
 import DatePicker from 'react-datepicker'
 import nl from 'date-fns/locale/nl'
+import { navigateTo } from 'gatsby-link'
 
 import '../../stylesheets/datetimepicker.css'
 import colors from '../colors'
@@ -225,6 +226,12 @@ const StyledButton = styled.button`
   }
 `
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 class ContactMe extends React.Component {
   constructor(props) {
     super(props)
@@ -239,17 +246,33 @@ class ContactMe extends React.Component {
       startDate: date,
     })
   }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state,
+      }),
+    })
+      .then(() => navigateTo(form.getAttribute('action')))
+      .catch(error => alert(error))
+  }
+
   render() {
     return (
       <form
         name="contactform"
         method="POST"
-        action="/thanks"
+        action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot"
+        onSubmit={this.handleSubmit}
       >
         <input type="hidden" name="form-name" value="contactform" />
-
         <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
             <FlexCol>
