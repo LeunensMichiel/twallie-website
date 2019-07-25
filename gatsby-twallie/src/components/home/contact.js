@@ -181,15 +181,15 @@ class ContactMe extends React.Component {
   }
   render() {
     return (
-      <Flex>
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          action="/thanks"
-          netlify-honeypot="bot"
-        >
-          <input name="bot" type="hidden" value="contact" />
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        action="/thanks"
+        netlify-honeypot="bot"
+      >
+        <input name="bot" type="hidden" value="contact" />
+        <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
             <FlexCol>
               <Title>BOEKEN?</Title>
@@ -257,8 +257,8 @@ class ContactMe extends React.Component {
               </FlexRight>
             </FlexCol>
           </IconContext.Provider>
-        </form>
-      </Flex>
+        </Flex>
+      </form>
     )
   }
 }
