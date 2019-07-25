@@ -15,7 +15,6 @@ module.exports = {
         theme_color: `#161919`,
         display: `standalone`,
         icon: `src/images/twallie-icon.png`, // This path is relative to the root of the site.
-        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
       },
     },
     `gatsby-plugin-react-helmet`,

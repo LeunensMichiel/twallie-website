@@ -120,6 +120,18 @@ const IndexPage = props => {
             </Flex>
           </LandingContainer>
         </Layout>
+        <form
+          name="contact"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          hidden
+        >
+          <input type="text" name="fullName" />
+          <input type="email" name="email" />
+          <input type="text" name="dateTime" />
+          <input name="eventAndLocation" type="text" />
+          <textarea name="message"></textarea>
+        </form>
       </div>
     </>
   )
