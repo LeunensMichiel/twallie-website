@@ -246,7 +246,7 @@ class ContactMe extends React.Component {
         method="POST"
         action="/thanks"
         data-netlify="true"
-        data-netlify-honeypot="bot"
+        netlify-honeypot="bot"
       >
         <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
