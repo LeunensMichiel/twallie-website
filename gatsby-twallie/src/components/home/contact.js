@@ -246,8 +246,10 @@ class ContactMe extends React.Component {
         method="POST"
         action="/thanks"
         data-netlify="true"
-        netlify-honeypot="bot"
+        data-netlify-honeypot="bot"
       >
+        <input type="hidden" name="form-name" value="contactform" />
+
         <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
             <FlexCol>
