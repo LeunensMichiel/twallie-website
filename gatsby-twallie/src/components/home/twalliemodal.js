@@ -26,7 +26,7 @@ class TwallieModal extends React.Component {
       <>
         <Button onClick={this.onOpenModal} text={buttonText} external />
         <Modal
-          open={true}
+          open={open}
           onClose={this.onCloseModal}
           center
           classNames={{
