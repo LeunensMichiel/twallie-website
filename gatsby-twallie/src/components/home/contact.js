@@ -81,6 +81,10 @@ const FormInput = styled.div`
   width: 100%;
   max-width: 350px;
 
+  &.field__hidden {
+    display: none;
+  }
+
   textarea {
     resize: none;
     height: 162px;
@@ -182,18 +186,20 @@ class ContactMe extends React.Component {
   render() {
     return (
       <form
-        name="contact"
+        name="contactform"
         method="POST"
-        data-netlify="true"
         action="/thanks"
+        data-netlify="true"
         netlify-honeypot="bot"
-        netlify
       >
-        <input name="bot" type="hidden" value="contact" />
+        <input name="form-name" type="hidden" value="contactform" />
         <Flex>
           <IconContext.Provider value={{ className: 'form-icons' }}>
             <FlexCol>
               <Title>BOEKEN?</Title>
+              <FormInput className="field__hidden">
+                <input name="bot" />
+              </FormInput>
               <FormInput>
                 <input
                   name="fullName"
