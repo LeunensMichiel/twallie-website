@@ -16,7 +16,7 @@ import Button from '../button'
 import colors from '../colors'
 import { device } from '../device'
 
-const Form = styled.form`
+const Flex = styled.div`
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -181,77 +181,84 @@ class ContactMe extends React.Component {
   }
   render() {
     return (
-      <Form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        action="/thanks"
-        netlify-honeypot="bot"
-      >
-        <input name="bot" type="hidden" value="contact" />
-        <IconContext.Provider value={{ className: 'form-icons' }}>
-          <FlexCol>
-            <Title>BOEKEN?</Title>
-            <FormInput>
-              <input
-                name="fullName"
-                type="text"
-                required
-                placeholder="Voornaam & Naam*"
-              />
-              <span className="highlight"></span>
-              <span className="bar"></span>
-              <FaUserCircle />
-            </FormInput>
-            <FormInput>
-              <input name="email" type="email" required placeholder="E-mail*" />
-              <span className="highlight"></span>
-              <span className="bar"></span>
-              <FaEnvelope />
-            </FormInput>
-            <FormInput>
-              <DatePicker
-                locale={nl}
-                selected={this.state.startDate}
-                onChange={this.handleChange}
-                showTimeSelect
-                timeIntervals={15}
-                timeFormat="HH:mm"
-                dateFormat="d.M.yyyy HH:mm"
-                timeCaption="Uur"
-                minDate={new Date()}
-                placeholderText="Datum & Tijd Event"
-                name="dateTime"
-              />
-              <span className="highlight"></span>
-              <span className="bar"></span>
-              <FaCalendarAlt />
-            </FormInput>
-            <FormInput>
-              <input
-                name="eventAndLocation"
-                type="text"
-                placeholder="Naam & Locatie Event"
-              />
-              <span className="highlight"></span>
-              <span className="bar"></span>
-              <FaMapMarkerAlt />
-            </FormInput>
-          </FlexCol>
-          <FlexCol className="selfalign">
-            <FlexRight>
+      <Flex>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          action="/thanks"
+          netlify-honeypot="bot"
+        >
+          <input name="bot" type="hidden" value="contact" />
+          <IconContext.Provider value={{ className: 'form-icons' }}>
+            <FlexCol>
+              <Title>BOEKEN?</Title>
               <FormInput>
-                <textarea name="message" required placeholder="Bericht*" />
+                <input
+                  name="fullName"
+                  type="text"
+                  required
+                  placeholder="Voornaam & Naam*"
+                />
                 <span className="highlight"></span>
                 <span className="bar"></span>
-                <FaCommentAlt />
+                <FaUserCircle />
               </FormInput>
-              <Button text="Verstuur" external form />
-              <Note>Velden met een * zijn verplicht</Note>
-            </FlexRight>
-          </FlexCol>
-        </IconContext.Provider>
-      </Form>
+              <FormInput>
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="E-mail*"
+                />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <FaEnvelope />
+              </FormInput>
+              <FormInput>
+                <DatePicker
+                  locale={nl}
+                  selected={this.state.startDate}
+                  onChange={this.handleChange}
+                  showTimeSelect
+                  timeIntervals={15}
+                  timeFormat="HH:mm"
+                  dateFormat="d.M.yyyy HH:mm"
+                  timeCaption="Uur"
+                  minDate={new Date()}
+                  placeholderText="Datum & Tijd Event"
+                  name="dateTime"
+                />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <FaCalendarAlt />
+              </FormInput>
+              <FormInput>
+                <input
+                  name="eventAndLocation"
+                  type="text"
+                  placeholder="Naam & Locatie Event"
+                />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <FaMapMarkerAlt />
+              </FormInput>
+            </FlexCol>
+            <FlexCol className="selfalign">
+              <FlexRight>
+                <FormInput>
+                  <textarea name="message" required placeholder="Bericht*" />
+                  <span className="highlight"></span>
+                  <span className="bar"></span>
+                  <FaCommentAlt />
+                </FormInput>
+                <Button text="Verstuur" external form />
+                <Note>Velden met een * zijn verplicht</Note>
+              </FlexRight>
+            </FlexCol>
+          </IconContext.Provider>
+        </form>
+      </Flex>
     )
   }
 }
