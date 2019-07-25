@@ -1,8 +1,9 @@
 ---
-aboutTitle: Lorem Ipsum
+aboutTitle: Bio
 aboutImage: /img/53891027_918239628508087_6580620467114082304_o.jpg
 aboutMeMd: >-
-  ![lm center](/img/untitled-1.png "Leunes Media")
+  ![lm center](/img/53891027_918239628508087_6580620467114082304_o.jpg "Twallie
+  ")
 
 
   TWALLIE aka Tijl Itterbeek is een 21-jarige DJ afkomstig uit het jeugdige
