@@ -108,7 +108,7 @@ const Footer = () => (
         <FaMugHot />
       </IconContext.Provider>{' '}
       by{' '}
-      <StyledLink href="http://www.leunesmedia.be/" target="_blank">
+      <StyledLink href="https://leunesmedia.netlify.com" target="_blank">
         Leunes Media
       </StyledLink>
     </FooterText>

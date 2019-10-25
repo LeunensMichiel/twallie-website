@@ -53,7 +53,10 @@ const FlexRight = styled.div`
   justify-content: stretch;
   align-items: flex-end;
   width: 100%;
-  max-width: 350px;
+
+  @media ${device.laptop} {
+    max-width: 350px;
+  }
 `
 
 const Title = styled.h1`
@@ -61,6 +64,8 @@ const Title = styled.h1`
   line-height: 71px;
   margin: 0;
   margin-bottom: 15px;
+  color: ${colors.foreground};
+
   &::after {
     content: '';
     border-bottom: 3px solid ${colors.primaryaccent};
@@ -78,7 +83,6 @@ const FormInput = styled.div`
   position: relative;
   margin: 12px 0;
   width: 100%;
-  max-width: 350px;
 
   textarea {
     resize: none;
@@ -156,6 +160,10 @@ const FormInput = styled.div`
       transition: 0.2s ease;
       left: 0%;
     }
+  }
+
+  @media ${device.laptop} {
+    max-width: 350px;
   }
 `
 

@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image/withIEPolyfill'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Button from '../components/button'
 import TwallieModal from '../components/home/twalliemodal'
 import ContactMe from '../components/home/contact'
+import { device } from '../components/device'
 
 import Icon from '../images/twallie-logo.svg'
-import { device } from '../components/device'
 
 const LandingContainer = styled.div`
   margin-top: 10%;
@@ -35,7 +36,7 @@ const TwallieDescription = styled.p`
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-  margin-bottom: 40px;
+  margin: 40px;
 
   @media (min-width: 370px) {
     font-size: 18px;
@@ -49,18 +50,17 @@ const TwallieDescription = styled.p`
   }
 `
 const Background = styled.div`
-  background-image: url(${props => (props.imgSrc ? props.imgSrc : '')});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  z-index: -1;
+
+  .gatsby-image-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   &:before {
     content: '';
@@ -69,6 +69,7 @@ const Background = styled.div`
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 4;
     background: linear-gradient(
       to bottom,
       rgba(22, 25, 25, 0.25) 0%,
@@ -103,7 +104,13 @@ const IndexPage = props => {
   return (
     <>
       <div className="blurwrapper">
-        <Background imgSrc={data.landingImage.childImageSharp.fluid.src} />
+        <Background>
+          <Img
+            objectFit="cover"
+            objectPosition="50% 50%"
+            fluid={data.landingImage.childImageSharp.fluid}
+          />
+        </Background>
         <Layout>
           <SEO title="Boeking" description="Boek Twallie" lang="nl" />
           <LandingContainer>
@@ -152,8 +159,10 @@ export const pageQuery = graphql`
           frontmatter {
             landingImage {
               childImageSharp {
-                fluid(quality: 77, maxWidth: 2048, fit: COVER) {
-                  src
+                fluid(quality: 77, maxWidth: 2048) {
+                  presentationWidth
+                  presentationHeight
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

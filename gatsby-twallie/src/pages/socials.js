@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import _ from 'lodash'
 import { FaSoundcloud, FaSpotify, FaInstagram } from 'react-icons/fa'
+import Img from 'gatsby-image/withIEPolyfill'
 import { IconContext } from 'react-icons'
 import InstaBlock from '../components/socials/instablock'
 import SoundcloudBlock from '../components/socials/soundcloudblock'
@@ -14,18 +14,17 @@ import colors from '../components/colors'
 import { device } from '../components/device'
 
 const Background = styled.div`
-  background-image: url(${props => (props.imgSrc ? props.imgSrc : '')});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 580px;
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  z-index: -1;
+
+  .gatsby-image-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   &:before {
     content: '';
@@ -34,6 +33,7 @@ const Background = styled.div`
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 4;
     background: linear-gradient(
       to bottom,
       rgba(22, 25, 25, 0.45) 0%,
@@ -131,29 +131,6 @@ export default class SocialsPage extends React.Component {
     }
 
     this.changeSocialBlock = this.changeSocialBlock.bind(this)
-    this.handleWheel = this.handleWheel.bind(this)
-  }
-
-  componentDidMount() {
-    window.addEventListener('wheel', _.debounce(this.handleWheel, 200), {
-      passive: true,
-    })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('wheel', this.handleWheel)
-  }
-
-  handleWheel(event) {
-    const { component } = this.state
-    if (event.deltaY < 0) {
-      component === 0
-        ? this.setState({ component: 2 })
-        : this.setState({ component: (this.state.component - 1) % 3 })
-    }
-    if (event.deltaY > 0) {
-      this.setState({ component: (this.state.component + 1) % 3 })
-    }
   }
 
   changeSocialBlock = number => {
@@ -167,13 +144,15 @@ export default class SocialsPage extends React.Component {
     const { component } = this.state
     return (
       <>
-        <Background imgSrc={data.socialsImage.childImageSharp.fluid.src} />{' '}
-        <Layout>
-          <SEO
-            title="Socials"
-            description="Socials van Twallie"
-            lang="nl"
+        <Background>
+          <Img
+            objectFit="cover"
+            objectPosition="50% 50%"
+            fluid={data.socialsImage.childImageSharp.fluid}
           />
+        </Background>
+        <Layout>
+          <SEO title="Socials" description="Socials van Twallie" lang="nl" />
           <SocialsContainer>
             <SocialItems>
               <StyledLink
@@ -228,7 +207,9 @@ export const pageQuery = graphql`
             socialsImage {
               childImageSharp {
                 fluid(quality: 77, maxWidth: 2048) {
-                  src
+                  presentationWidth
+                  presentationHeight
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
