@@ -17,12 +17,13 @@ aboutMeMd: >-
   "Twallie says Hi")
 
 
-  Winnaar Jospop, Oosthoek Live, Openluchtfuif Bodegem & KLJ Vlezenbeek
-  Kerstfuif Contest - Vijverfestival - Spectakulo Festival - New Years Party
-  Ternat - Nieuwjaarsfuif CC 'T Vondel - KLJ SML New Years Party - Joke Day -
-  Openluchtfuif Bodegem - Openluchtfuif Winter Edition - Zomaar Zomert - Nacht
-  van de Dilbeekse Jeugd - Carot Night - Jinfuif - Godzijdrank - Brussels Bal
-  der Rechten - Öktöberfest - Square Café Lennik - ...
+  MNM START TO DJ 2019 (3th out of 124), Winnaar Jospop, Oosthoek Live,
+  Openluchtfuif Bodegem & KLJ Vlezenbeek Kerstfuif Contest - Vijverfestival -
+  Spectakulo Festival - New Years Party Ternat - Nieuwjaarsfuif CC 'T Vondel -
+  KLJ SML New Years Party - Joke Day - Openluchtfuif Bodegem - Openluchtfuif
+  Winter Edition - Zomaar Zomert - Nacht van de Dilbeekse Jeugd - Carot Night -
+  Jinfuif - Godzijdrank - Brussels Bal der Rechten - Öktöberfest - Square Café
+  Lennik - ...
 
 
   ![Twallie right](/img/53410200_923240301341353_3115761991700971520_o-1-.jpg
