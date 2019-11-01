@@ -55,7 +55,6 @@ const Flex = styled.div`
 `
 
 const StyledLink = styled.a`
-  text-decoration: none;
   color: ${colors.foreground};
   transition: ease 0.3s;
 
@@ -108,7 +107,7 @@ const Footer = () => (
         <FaMugHot />
       </IconContext.Provider>{' '}
       by{' '}
-      <StyledLink href="https://leunesmedia.netlify.com" target="_blank">
+      <StyledLink href="https://leunesmedia.com" target="_blank">
         Leunes Media
       </StyledLink>
     </FooterText>

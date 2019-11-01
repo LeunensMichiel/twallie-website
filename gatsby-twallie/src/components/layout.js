@@ -12,6 +12,8 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0 10px;
+  align-content: start;
+  position: relative;
 
   > * {
     grid-column: 1 / span 4;
@@ -22,6 +24,17 @@ const Wrapper = styled.div`
     > * {
       grid-column: 1 / span 12;
     }
+  }
+
+  @media ${device.mobileSLandscape} {
+    min-height: 70vw;
+  }
+
+  @media ${device.mobileMLandscape} {
+    min-height: 70vw;
+  }
+  @media ${device.tabletland} {
+    min-height: 66vw;
   }
 `
 

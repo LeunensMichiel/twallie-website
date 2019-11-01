@@ -15,18 +15,32 @@ import '../../stylesheets/datetimepicker.css'
 import colors from '../colors'
 import { device } from '../device'
 
+const Form = styled.form`
+  height: 100%;
+  margin-bottom: 0;
+
+  @media ${device.tabletPortrait} {
+    padding-top: 15%;
+  }
+
+  @media ${device.laptop} {
+    padding-top: 0;
+  }
+`
+
 const Flex = styled.div`
   padding: 2em;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
 
   @media ${device.laptop} {
     min-height: 544px;
     flex-direction: row;
     padding: 69px 85px;
-    align-items: flex-start;
+    align-items: center;
   }
 `
 
@@ -41,9 +55,19 @@ const FlexCol = styled.div`
     align-self: flex-end;
   }
 
+  &:nth-of-type(2) {
+    height: 100%;
+  }
+
   @media ${device.laptop} {
     justify-content: stretch;
-    align-items: flex-start;
+    padding-right: 1.5em;
+
+    &:nth-of-type(2) {
+      height: unset;
+      padding-right: 0;
+      padding-left: 1.5em;
+    }
   }
 `
 
@@ -53,10 +77,7 @@ const FlexRight = styled.div`
   justify-content: stretch;
   align-items: flex-end;
   width: 100%;
-
-  @media ${device.laptop} {
-    max-width: 350px;
-  }
+  flex: 1;
 `
 
 const Title = styled.h1`
@@ -76,6 +97,7 @@ const Title = styled.h1`
   @media ${device.laptop} {
     font-size: 72px;
     line-height: 100px;
+    align-self: flex-start;
   }
 `
 
@@ -161,10 +183,6 @@ const FormInput = styled.div`
       left: 0%;
     }
   }
-
-  @media ${device.laptop} {
-    max-width: 350px;
-  }
 `
 
 const Note = styled.small`
@@ -192,6 +210,14 @@ const StyledButton = styled.button`
   position: relative;
   z-index: 4;
   margin-top: 25px;
+
+  @media ${device.tablet} {
+    margin-top: auto;
+  }
+
+  @media ${device.laptop} {
+    margin-top: 25px;
+  }
 
   &:before {
     position: relative;
@@ -246,7 +272,7 @@ class ContactMe extends React.Component {
 
   render() {
     return (
-      <form
+      <Form
         name="contact"
         method="post"
         action="/thanks"
@@ -324,7 +350,7 @@ class ContactMe extends React.Component {
             </FlexCol>
           </IconContext.Provider>
         </Flex>
-      </form>
+      </Form>
     )
   }
 }

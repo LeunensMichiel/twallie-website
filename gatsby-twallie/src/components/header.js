@@ -11,6 +11,7 @@ const Navigation = styled.nav`
   justify-content: center;
   align-content: center;
   margin-top: 20px;
+  max-height: 100px;
 
   @media ${device.tablet} {
     margin-top: 40px;

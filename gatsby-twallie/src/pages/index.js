@@ -13,21 +13,53 @@ import { device } from '../components/device'
 import Icon from '../images/twallie-logo.svg'
 
 const LandingContainer = styled.div`
-  margin-top: 10%;
   padding: 0 2em;
+  margin: 5vh 0;
 
   @media (min-width: 370px) {
-    margin-top: 20%;
+    margin: 10vh 0;
+  }
+
+  @media ${device.mobileSLandscape} {
+    margin: 0;
+    svg {
+      width: 66%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  @media ${device.mobileMLandscape} {
+    margin: 0;
+
+    svg {
+      width: 66%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  @media ${device.tablet} {
+    margin: 15vh 0;
+    justify-self: center;
+    svg {
+      width: 80%;
+    }
+  }
+
+  @media ${device.tabletland} {
+    margin: 10vh 0;
+  }
+  @media ${device.ipadProPortrait} {
+    justify-self: initial;
+    grid-column: 2 / span 3;
+    margin: 20vh 0;
   }
 
   @media ${device.laptop} {
-    grid-column: 6 / span 5;
-    margin-top: 15%;
-    padding: 0;
-  }
-
-  @media ${device.desktop} {
-    grid-column: 6 / span 4;
+    margin: 15vh 0;
+    justify-self: initial;
+    grid-column: 6 / span 6;
   }
 `
 
@@ -87,14 +119,25 @@ const Flex = styled.div`
   align-items: center;
 
   > * {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
-  @media ${device.laptop} {
+  @media ${device.mobileSLandscape} {
     flex-direction: row;
+  }
+
+  @media ${device.mobileMLandscape} {
+    flex-direction: row;
+  }
+
+  @media ${device.tablet} {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 40px;
 
     > * {
       margin-bottom: 0;
+      margin-right: 1.5em;
     }
   }
 `
