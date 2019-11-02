@@ -16,7 +16,7 @@ import colors from '../colors'
 import { device } from '../device'
 
 const Form = styled.form`
-  height: 100%;
+  min-height: 100%;
   margin-bottom: 0;
 
   @media ${device.tabletPortrait} {

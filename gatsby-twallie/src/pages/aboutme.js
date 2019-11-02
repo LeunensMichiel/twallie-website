@@ -9,6 +9,11 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { device } from '../components/device'
 
+const Wrapper = styled.div`
+  width: 100%;
+  min-height: 100%;
+`
+
 const BioWrapper = styled.div`
   width: 100%;
   margin-top: 20px;
@@ -133,7 +138,7 @@ export class aboutme extends PureComponent {
   render() {
     const data = this.props.data.allMarkdownRemark.edges[0].node.frontmatter
     return (
-      <>
+      <Wrapper>
         <SEO
           title="Twallie || Over mij"
           description="Wie ben ik? // Twallie"
@@ -155,7 +160,7 @@ export class aboutme extends PureComponent {
           <BottomImage imgUrl={data.aboutImage.childImageSharp.fluid.src} />
         </BioWrapper>
         <Footer />
-      </>
+      </Wrapper>
     )
   }
 }
