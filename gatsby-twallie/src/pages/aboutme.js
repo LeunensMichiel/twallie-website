@@ -9,6 +9,8 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { device } from '../components/device'
 
+import '../stylesheets/layout.scss'
+
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
