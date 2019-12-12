@@ -143,7 +143,7 @@ export class aboutme extends PureComponent {
       <Wrapper>
         <SEO
           title="Info"
-          description="Kom meer te weten over Belgische DJ: Twallie. Twallie heeft al gestaan op MNM START TO DJ 2019 (3th out of 124), Winnaar Jospop, Oosthoek Live, Openluchtfuif en veel meer."
+          description="Kom meer te weten over Belgische DJ: Twallie. Twallie heeft al gestaan op MNM START TO DJ 2019 (3de van de 124), Jospop, Oosthoek Live, Openluchtfuif en veel meer."
           lang="nl"
         />
         <Header />

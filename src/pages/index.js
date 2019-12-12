@@ -147,7 +147,7 @@ const IndexPage = props => {
   return (
     <>
       <div className="blurwrapper">
-        <SEO title="Home" description="Officiële website van twallie. Contacteer of boek hem, kom meer over hem te weten, en krijg toegang tot zijn press-pics en logo's." lang="nl" />
+        <SEO title="Home" description="Officiële website van Twallie. Contacteer of boek hem, kom meer over hem te weten, en krijg toegang tot zijn press-pics & logo's." lang="nl" />
         <Background>
           <Img
             objectFit="cover"
