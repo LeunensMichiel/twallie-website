@@ -152,7 +152,7 @@ export default class SocialsPage extends React.Component {
           />
         </Background>
         <Layout>
-          <SEO title="Socials" description="Socials van Twallie" lang="nl" />
+          <SEO title="Socials" description="Socials van (deejay) Twallie. Instagram, Spotify & Soundcloud" lang="nl" />
           <SocialsContainer>
             <SocialItems>
               <StyledLink

@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Twallie Official Site`,
-    description: `This is the website/portfolio of the Belgian DJ, Twallie`,
-    author: `Leunes Media`,
-  },
+    title: `Twallie Officiële Site`,
+    description: `De officiële website van de Belgische DJ: Twallie. Boek hem hier, of kom meer over hem te weten.`,
+    author: `@LeunensMichiel`,
+    url: `https://www.deejaytwallie.com`,
+    },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,

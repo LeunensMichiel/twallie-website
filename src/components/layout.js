@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   grid-gap: 0 10px;
   align-content: start;
   position: relative;
+  min-height: 80vh;
 
   > * {
     grid-column: 1 / span 4;

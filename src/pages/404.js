@@ -23,7 +23,7 @@ const Container = styled.div`
       font-size: 72px;
     }
     p {
-      font-size: 18px;
+      font-size: 24px;
     }
   }
 `

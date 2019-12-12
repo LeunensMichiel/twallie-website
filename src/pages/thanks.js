@@ -23,14 +23,14 @@ const Container = styled.div`
       font-size: 72px;
     }
     p {
-      font-size: 18px;
+      font-size: 24px;
     }
   }
 `
 
 const ThanksPage = () => (
   <Layout>
-    <SEO title="Thanks page" />
+    <SEO title="Thank you page" />
     <Container>
       <h1>BEDANKT!</h1>
       <p>Uw aanvraag werd goed ontvangen, ik neem zodra contact met u op!</p>
