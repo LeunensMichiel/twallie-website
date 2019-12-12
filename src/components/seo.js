@@ -15,7 +15,7 @@ function SEO({ description, lang, meta, title }) {
             url
           }
         }
-        seoImage: file(relativePath: { eq: "seo.jpg" }) {
+        seoImage: file(relativePath: { eq: "seo.jpeg" }) {
           childImageSharp {
             original {
               src
@@ -31,6 +31,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = title || site.siteMetadata.title
   const metaUrl = site.siteMetadata.url
+  console.log('image', seoImage)
 
   return (
     <>
