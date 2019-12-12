@@ -8,6 +8,8 @@ public_folder: img
 site_url: https://www.deejaytwallie.com
 logo_url: https://www.deejaytwallie.com/img/twallie-logo.svg
 
+publish_mode: editorial_workflow
+
 collections:
   - label: 'Pages'
     name: 'pages'
