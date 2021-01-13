@@ -13,6 +13,7 @@ function SEO({ description, lang, meta, title }) {
             description
             author
             url
+            keywords
           }
         }
         seoImage: file(relativePath: { eq: "seo.jpeg" }) {
@@ -44,6 +45,10 @@ function SEO({ description, lang, meta, title }) {
           {
             name: 'description',
             content: metaDescription,
+          },
+          {
+            name: "keywords",
+            content: site.siteMetadata.keywords.join(","),
           },
           {
             property: 'og:title',

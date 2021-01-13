@@ -4,6 +4,24 @@ module.exports = {
     description: `De officiële website van de Belgische DJ: Twallie. Boek hem hier, of kom meer over hem te weten.`,
     author: `@LeunensMichiel`,
     url: `https://www.deejaytwallie.com`,
+    keywords: [
+      `Tijl`,
+      `Itterbeek`,
+      `dj`,
+      `muziek`,
+      `all-round`,
+      `Dilbeek`,
+      `Vlaams-Brabant`,
+      `Brussel`,
+      `Vlaams-Brabant`,
+      `deejay`,
+      `plaatjes`,
+      `MNM`,
+      `fuif`,
+      `event`,
+      `twallie`,
+      `winnaar`,
+    ],
     },
   plugins: [
     {
@@ -75,6 +93,5 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
   ],
 }

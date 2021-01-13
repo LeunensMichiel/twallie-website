@@ -10,6 +10,8 @@ logo_url: https://www.deejaytwallie.com/img/twallie-logo.svg
 
 publish_mode: editorial_workflow
 
+local_backend: true
+
 collections:
   - label: 'Pages'
     name: 'pages'
