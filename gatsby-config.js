@@ -41,14 +41,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/img`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -91,7 +91,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
   ],
 }

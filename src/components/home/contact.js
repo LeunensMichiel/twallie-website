@@ -133,6 +133,15 @@ const FormInput = styled.div`
     &:focus {
       outline: none;
     }
+
+    //To fix ugly autocomplete background on Chrome
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+    }
     &:focus ~ .bar:before {
       width: 100%;
     }
@@ -315,7 +324,7 @@ class ContactMe extends React.Component {
                   showTimeSelect
                   timeIntervals={15}
                   timeFormat="HH:mm"
-                  dateFormat="d.M.yyyy HH:mm"
+                  dateFormat="dd.MM.yyyy HH:mm"
                   timeCaption="Uur"
                   minDate={new Date()}
                   placeholderText="Datum & Tijd Event"

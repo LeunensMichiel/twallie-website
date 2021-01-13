@@ -203,8 +203,6 @@ export const pageQuery = graphql`
             landingImage {
               childImageSharp {
                 fluid(quality: 77, maxWidth: 2048) {
-                  presentationWidth
-                  presentationHeight
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

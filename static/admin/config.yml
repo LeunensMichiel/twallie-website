@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: gatsby-twallie/static/img
-public_folder: img
+media_folder: static/img
+public_folder: /img
 
 site_url: https://www.deejaytwallie.com
 logo_url: https://www.deejaytwallie.com/img/twallie-logo.svg
@@ -18,7 +18,7 @@ collections:
     files:
       - label: 'Landing Page'
         name: 'index'
-        file: 'gatsby-twallie/src/pages/index.md'
+        file: 'src/pages/index.md'
         fields:
           - {
               label: 'Twallie Description',
@@ -35,7 +35,7 @@ collections:
                 multiple: false
       - label: 'Socials Page'
         name: 'socials'
-        file: 'gatsby-twallie/src/pages/socials.md'
+        file: 'src/pages/socials.md'
         fields:
           - label: 'Socials Background Image'
             hint: 'Zet hier uw afbeelding voor uw Socials pagina'
@@ -58,12 +58,12 @@ collections:
             }
       - label: 'About Page'
         name: 'aboutme'
-        file: 'gatsby-twallie/src/pages/aboutme.md'
+        file: 'src/pages/aboutme.md'
         fields:
           - { label: Title, name: aboutTitle, widget: string }
           - label: 'About Me Footer Image'
             hint: 'Zet hier uw afbeelding dat vanonder op je about-me sectie pagina staat.'
-            name: 'aboutImage'
+            name: 'age'
             widget: 'image'
             media_library:
               config:
