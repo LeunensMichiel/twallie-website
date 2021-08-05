@@ -1,5 +1,5 @@
 ---
 twallieDescription: Allround DJ. Enthousiast. Gepassioneerd.
-landingImage: /img/facebook-12.jpg
+landingImage: /img/_1311338.jpg
 ---
 
