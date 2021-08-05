@@ -1,8 +1,8 @@
 ---
 aboutTitle: Bio
-age: /img/insta-06629.jpg
+age: /img/insta-06871.jpg
 aboutMeMd: >-
-  ![lm center]( "Twallie ")
+  ![lm center](/img/insta-06629.jpg "Twallie ")
 
 
   Je kan als Pajotse jongere niet de woorden ‘dikke boit’ in de mond nemen
